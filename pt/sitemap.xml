@@ -68,11 +68,6 @@
   </url>
   
   <url>
-    <loc>https://pranav083.github.io/pt/series/guia-de-temas/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://pranav083.github.io/pt/tags/html/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -114,21 +109,6 @@
                 rel="alternate"
                 hreflang="pt"
                 href="https://pranav083.github.io/pt/post/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://pranav083.github.io/pt/series/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://pranav083.github.io/series/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="https://pranav083.github.io/pt/series/"
                 />
   </url>
   
