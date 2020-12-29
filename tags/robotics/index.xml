@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Robotics on Namaste</title>
+    <link>https://pranav083.github.io/tags/robotics/</link>
+    <description>Recent content in Robotics on Namaste</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Copyright © 2016–2030, Pranav Kumar; all rights reserved.</copyright>
+    <lastBuildDate>Fri, 18 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://pranav083.github.io/tags/robotics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About Open Source Robotics</title>
+      <link>https://pranav083.github.io/post/myfirstblog/</link>
+      <pubDate>Fri, 18 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://pranav083.github.io/post/myfirstblog/</guid>
+      <description>
+        
+          &lt;p&gt;I explore and learn daily. I mostly.&lt;/p&gt;
+
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>
