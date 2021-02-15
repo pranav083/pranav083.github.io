@@ -3,18 +3,8 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://pranav083.github.io/about/</loc>
-    <lastmod>2020-12-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://pranav083.github.io/project/</loc>
-    <lastmod>2020-12-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://pranav083.github.io/</loc>
-    <lastmod>2020-12-18T00:00:00+00:00</lastmod>
+    <lastmod>2021-02-15T14:27:35+05:30</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
@@ -28,48 +18,13 @@
   </url>
   
   <url>
-    <loc>https://pranav083.github.io/post/myfirstblog/</loc>
-    <lastmod>2020-12-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://pranav083.github.io/post/</loc>
-    <lastmod>2020-12-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://pranav083.github.io/tags/robotics/</loc>
-    <lastmod>2020-12-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://pranav083.github.io/tags/</loc>
-    <lastmod>2020-12-18T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="https://pranav083.github.io/pt/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://pranav083.github.io/tags/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://pranav083.github.io/archive/</loc>
-    <lastmod>2019-05-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://pranav083.github.io/2020/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
+    <loc>https://pranav083.github.io/tags/arduino/</loc>
+    <lastmod>2021-02-15T14:27:35+05:30</lastmod>
   </url>
   
   <url>
     <loc>https://pranav083.github.io/categories/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
+    <lastmod>2021-02-15T14:27:35+05:30</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
@@ -83,23 +38,38 @@
   </url>
   
   <url>
-    <loc>https://pranav083.github.io/categories/gallery/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
+    <loc>https://pranav083.github.io/tags/esp32/</loc>
+    <lastmod>2021-02-15T14:27:35+05:30</lastmod>
   </url>
   
   <url>
-    <loc>https://pranav083.github.io/2020/markdown-syntax/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
+    <loc>https://pranav083.github.io/tags/lvgl/</loc>
+    <lastmod>2021-02-15T14:27:35+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pranav083.github.io/post/lvgl_esp32_setup/</loc>
+    <lastmod>2021-02-15T14:27:35+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pranav083.github.io/tags/platformio/</loc>
+    <lastmod>2021-02-15T14:27:35+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pranav083.github.io/post/</loc>
+    <lastmod>2021-02-15T14:27:35+05:30</lastmod>
   </url>
   
   <url>
     <loc>https://pranav083.github.io/categories/project/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
+    <lastmod>2021-02-15T14:27:35+05:30</lastmod>
   </url>
   
   <url>
     <loc>https://pranav083.github.io/series/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
+    <lastmod>2021-02-15T14:27:35+05:30</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
@@ -110,6 +80,81 @@
                 hreflang="en"
                 href="https://pranav083.github.io/series/"
                 />
+  </url>
+  
+  <url>
+    <loc>https://pranav083.github.io/series/setup-guide/</loc>
+    <lastmod>2021-02-15T14:27:35+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pranav083.github.io/tags/st7735s/</loc>
+    <lastmod>2021-02-15T14:27:35+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pranav083.github.io/tags/</loc>
+    <lastmod>2021-02-15T14:27:35+05:30</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://pranav083.github.io/pt/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://pranav083.github.io/tags/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://pranav083.github.io/about/</loc>
+    <lastmod>2020-12-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pranav083.github.io/project/</loc>
+    <lastmod>2020-12-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pranav083.github.io/post/myfirstblog/</loc>
+    <lastmod>2020-12-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pranav083.github.io/tags/beagleboard/</loc>
+    <lastmod>2020-12-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pranav083.github.io/tags/myself/</loc>
+    <lastmod>2020-12-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pranav083.github.io/tags/project/</loc>
+    <lastmod>2020-12-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pranav083.github.io/archive/</loc>
+    <lastmod>2019-05-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pranav083.github.io/2020/</loc>
+    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pranav083.github.io/categories/gallery/</loc>
+    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pranav083.github.io/2020/markdown-syntax/</loc>
+    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
   </url>
   
   <url>
