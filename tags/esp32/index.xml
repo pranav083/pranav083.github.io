@@ -6,11 +6,11 @@
     <description>Recent content in esp32 on Namaste</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright © 2016–2030, Pranav Kumar; all rights reserved.</copyright>
-    <lastBuildDate>Mon, 15 Feb 2021 14:27:35 +0530</lastBuildDate><atom:link href="https://pranav083.github.io/tags/esp32/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 16 Feb 2021 14:27:35 +0530</lastBuildDate><atom:link href="https://pranav083.github.io/tags/esp32/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>lvgl_esp32_setup</title>
+      <title>LVGL esp32 setup</title>
       <link>https://pranav083.github.io/post/lvgl_esp32_setup/</link>
-      <pubDate>Mon, 15 Feb 2021 14:27:35 +0530</pubDate>
+      <pubDate>Tue, 16 Feb 2021 14:27:35 +0530</pubDate>
       
       <guid>https://pranav083.github.io/post/lvgl_esp32_setup/</guid>
       <description>
@@ -248,6 +248,282 @@ and for the Arduino IDE go to &lt;code&gt;/home/{USERNAME}/Arduino/libraries/TFT
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://pranav083.github.io/images/lvgl_esp32_setup/11-02-2021-16-13-58.png&#34; alt=&#34;&#34; title=&#34;Wrong configuration&#34;&gt;&lt;/p&gt;
 &lt;h4 id=&#34;help-in-improving-the-guide&#34;&gt;Help in improving the guide&lt;/h4&gt;
 &lt;p&gt;Thanks for the Futuristic Labs Pvt. Ltd. for providing me the resources of the project.
+Please if you find any useful improvement feel free to contact at : @pranav083&lt;/p&gt;
+
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>LVGL hardware button setup</title>
+      <link>https://pranav083.github.io/post/lvgl_hardware_button_setup/</link>
+      <pubDate>Mon, 15 Feb 2021 14:27:35 +0530</pubDate>
+      
+      <guid>https://pranav083.github.io/post/lvgl_hardware_button_setup/</guid>
+      <description>
+        
+          &lt;h1 id=&#34;arduino-esp32-lvgl-lv_arduino-hardware_button-st7735s&#34;&gt;Arduino Esp32 LVGL lv_arduino Hardware_button st7735s&lt;/h1&gt;
+&lt;p&gt;This setup guide is made using the following hardware and software&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Hardware Components And Supplies :-&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://components101.com/sites/default/files/component_pin/ESP32-Pinout.png&#34;&gt;Esp32 Dev Module&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;ST7735s 1.8&amp;quot; TFT Display 128 x 160&lt;/li&gt;
+&lt;li&gt;USB Cable to upload the code&lt;/li&gt;
+&lt;li&gt;Jumper Cable (Male to Male)&lt;/li&gt;
+&lt;li&gt;BreadBoard&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;Software Used in the project&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://platformio.org/install/ide?install=vscode&#34;&gt;PlatformIO&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://code.visualstudio.com/download&#34;&gt;Vscode&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/espressif/arduino-esp32&#34;&gt;esp32 Framework:&lt;/a&gt; Arduino&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/lvgl/lv_arduino/releases/tag/2.1.5&#34;&gt;lvgl/lv_arduino@2.1.5&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Bodmer/TFT_eSPI/releases/tag/2.3.59&#34;&gt;bodmer/TFT_eSPI@^2.3.59&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/greiman/SdFat/releases/tag/2.0.4&#34;&gt;greiman/SdFat@^2.0.4&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/lvgl/lvgl/releases/tag/v7.10.0&#34;&gt;lvgl/lvgl@^7.10.0&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/lvgl/lv_examples/releases/tag/v7.10.0&#34;&gt;lvgl/lv_examples@^7.10.0&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;It is easier to download the required library from the platformIO library section from its home page.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note:-&lt;/strong&gt; It is recommended to go with that version of the library as it is tested on the system and it is working properly. And please go through the Display SETUP guide once.&lt;/p&gt;
+&lt;!-- put the link of setup guide lvgl esp32 --&gt;
+&lt;h4 id=&#34;introduction&#34;&gt;Introduction:&lt;/h4&gt;
+&lt;p&gt;The main aim of this project is to able to run the LVGL library on the st7735s 128 x 160 TFT display with using esp32 and configure multiple button input from the different GPIO of the ESP32 and pass that data command to the screen fuctionality. I am driving my system in the landscape mode you can go with portrait mode also but you to configure the setting properly. If faces any problen on the screen setup go to the previous guide of lvgl screen setup&lt;a href=&#34;put-the-link&#34;&gt;put the link&lt;/a&gt; .
+In this setup , I have put total of 8 button from the esp32 which are both input and touch configurable in the esp32 board&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Earlier Tested&lt;/strong&gt; : 1. Earlier i tested the blog for setting and registring the button on the lvgl, from this &lt;a href=&#34;https://blog.lvgl.io/2019-01-08/hardware-button&#34;&gt;Guide&lt;/a&gt; &lt;strong&gt;some functions depriciated&lt;/strong&gt; in the guide.
+2. But unforunately that guide have setup defined on the stm32 board and also itis for the older version of the lvgl and some of the fuction are depriciated in the newer version of the lvgl.&lt;/p&gt;
+&lt;h3 id=&#34;putting-the-setup&#34;&gt;putting the Setup&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Step 1&lt;/strong&gt;:Create a new project in platformIO and Do the connection of the esp32 with Capacitive touch button are as follows:&lt;/p&gt;
+&lt;p align=&#34;center&#34;&gt;
+&lt;img align=&#34;center&#34; width=&#34;500&#34; height=&#34;300&#34; class=&#34;special-img-class&#34; src=&#34;https://pranav083.github.io/images/lvgl_hardware_button_setup/16-02-2021-16-10-44.png&#34; alt =&#34;ST7735s&#34; title =&#34;Capacitive Touch sensor&#34;  &gt;  
+&lt;/p&gt;  
+&lt;p&gt;$$\text{Capacitive Touch sensor}$$&lt;/p&gt;
+&lt;p align=&#34;center&#34;&gt;
+&lt;img align=&#34;center&#34; width=&#34;500&#34; height=&#34;300&#34; class=&#34;special-img-class&#34; src=&#34;https://pranav083.github.io/images/lvgl_hardware_button_setup/16-02-2021-16-50-49.png&#34; alt =&#34;ST7735s&#34; title =&#34;Capacitive Touch sensor setup&#34;  &gt;  
+&lt;/p&gt;
+&lt;p&gt;$$\text{Capacitive Touch sensor setup}$$&lt;/p&gt;
+&lt;p align=&#34;center&#34;&gt;
+&lt;img align=&#34;center&#34; width=&#34;500&#34; height=&#34;300&#34; class=&#34;special-img-class&#34; src=&#34;https://pranav083.github.io/images/lvgl_esp32_setup/11-02-2021-13-45-18.png&#34; alt =&#34;ESP32&#34; title =&#34;ESP32&#34; &gt;
+&lt;/p&gt;
+&lt;p&gt;$$\text{ESP32 dev Board }$$&lt;/p&gt;
+&lt;h4 id=&#34;system-connections&#34;&gt;System Connections:&lt;/h4&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Sl No.&lt;/th&gt;
+&lt;th&gt;Capacitive Touch Signal pin&lt;/th&gt;
+&lt;th&gt;ESP32&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;1.&lt;/td&gt;
+&lt;td&gt;Button_1&lt;/td&gt;
+&lt;td&gt;27&lt;/td&gt;
+&lt;td&gt;Capacitive touch button&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2.&lt;/td&gt;
+&lt;td&gt;Button_2&lt;/td&gt;
+&lt;td&gt;14&lt;/td&gt;
+&lt;td&gt;Capacitive touch button&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;3.&lt;/td&gt;
+&lt;td&gt;Button_3&lt;/td&gt;
+&lt;td&gt;12&lt;/td&gt;
+&lt;td&gt;Capacitive touch button&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;Step 2:&lt;/strong&gt;  Now do the following setup in the downloaded library as in my case i used PlatformIO so i will go to :&lt;br&gt;
+&lt;code&gt;{your platformIO project name}/.pio/libdeps/esp32dev/TFT_eSPI/User_Setup.h&lt;/code&gt;&lt;br&gt;
+and for the Arduino IDE go to &lt;code&gt;/home/{USERNAME}/Arduino/libraries/TFT_eSPI/User_Setup.h&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;So either you can comment everything their and put these lines or read the file uncomment these changes in the &lt;code&gt;User_Setup.h&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Step 2:&lt;/strong&gt; Now go to the &lt;code&gt;{your platformIO project name}/.pio/libdeps/esp32dev/lv_arduino/lv_conf.h&lt;/code&gt; and for the Arduino IDE go to &lt;code&gt;/home/{USERNAME}/Arduino/libraries/.pio/libdeps/esp32dev/lv_arduino/lv_conf.h&lt;/code&gt;  and do the following changes :&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;/* Input device read period in milliseconds */&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;#define LV_INDEV_DEF_READ_PERIOD          30            &lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// for button till 20ms is recommended
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;/* Long press time in milliseconds.
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt; * Time to send `LV_EVENT_LONG_PRESSED`) */&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;#define LV_INDEV_DEF_LONG_PRESS_TIME      400           &lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// if long press required
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;/* Repeated trigger period in long press [ms]
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt; * Time between `LV_EVENT_LONG_PRESSED_REPEAT */&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;#define LV_INDEV_DEF_LONG_PRESS_REP_TIME  100
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// enable log settings
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;11&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;#define LV_USE_LOG      1
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;12&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;#  define LV_LOG_LEVEL     LV_LOG_LEVEL_INFO            &lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// easy for debugging 
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;13&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;#  define LV_LOG_PRINTF   1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;Step 3:&lt;/strong&gt; Now go to the &lt;code&gt;{your platformIO project name}/.pio/libdeps/esp32dev/lvgl/examples/porting&lt;/code&gt; folder and for the Arduino IDE go to &lt;code&gt;/home/{USERNAME}/Arduino/libraries/.pio/libdeps/esp32dev/lvgl/examples/porting&lt;/code&gt;  and do the following changes :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;and copy the file name &lt;code&gt;lv_port_indev_template.c&lt;/code&gt; as &lt;code&gt;lv_port_indev.c&lt;/code&gt; and &lt;code&gt;lv_port_indev_template.h&lt;/code&gt; as &lt;code&gt;lv_port_indev.h&lt;/code&gt; in the folder name &lt;code&gt;lv_port_indev&lt;/code&gt; in your local lib folder in the PlatformIO or in the skechbook folder of the Arduino IDE.&lt;/li&gt;
+&lt;li&gt;Now open the &lt;code&gt;lv_port_indev.h&lt;/code&gt; file and remove with following lines:
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;  &lt;span class=&#34;cm&#34;&gt;/**
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;  * @file lv_port_indev.h
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;  *
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;  */&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;  &lt;span class=&#34;cm&#34;&gt;/*Copy this file as &amp;#34;lv_port_indev.h&amp;#34; and set this value to &amp;#34;1&amp;#34; to enable content*/&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;  &lt;span class=&#34;cp&#34;&gt;#if 1
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;  &lt;span class=&#34;cp&#34;&gt;#ifndef LV_PORT_INDEV_H
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;cp&#34;&gt;#define LV_PORT_INDEV_H
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;11&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;12&lt;/span&gt;  &lt;span class=&#34;cp&#34;&gt;#ifdef __cplusplus
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;13&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;k&#34;&gt;extern&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;C&amp;#34;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;14&lt;/span&gt;  &lt;span class=&#34;cp&#34;&gt;#endif
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;15&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;16&lt;/span&gt;  &lt;span class=&#34;cm&#34;&gt;/*********************
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;17&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;  *      INCLUDES
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;18&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;  *********************/&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;19&lt;/span&gt;  &lt;span class=&#34;cm&#34;&gt;/*********************
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;20&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;  *      DEFINES
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;21&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;  *********************/&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;22&lt;/span&gt;  &lt;span class=&#34;cp&#34;&gt;#define BUTTON_1         27      &lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// GPIO from esp32 dev module
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;23&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;cp&#34;&gt;#define BUTTON_2         14      &lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// GPIO from esp32 dev module
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;24&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;cp&#34;&gt;#define BUTTON_3         12      &lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// GPIO from esp32 dev module
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;25&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;cm&#34;&gt;/**********************
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;26&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;  *      TYPEDEFS
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;27&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;  **********************/&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;28&lt;/span&gt;  &lt;span class=&#34;k&#34;&gt;typedef&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;struct&lt;/span&gt; 
+&lt;span class=&#34;ln&#34;&gt;29&lt;/span&gt;  &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;30&lt;/span&gt;      &lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;char&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;pin_name&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;15&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;];&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;31&lt;/span&gt;      &lt;span class=&#34;kt&#34;&gt;int8_t&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;pin_no&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;32&lt;/span&gt;      &lt;span class=&#34;kt&#34;&gt;int8_t&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;button_no&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;33&lt;/span&gt;      &lt;span class=&#34;k&#34;&gt;volatile&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;bool&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;pin_state&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;34&lt;/span&gt;      &lt;span class=&#34;kt&#34;&gt;int8_t&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;pin_mode&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;35&lt;/span&gt;      &lt;span class=&#34;kt&#34;&gt;bool&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;pin_last_state&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;36&lt;/span&gt;  &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;buttons_c&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;37&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;38&lt;/span&gt;  &lt;span class=&#34;cm&#34;&gt;/**********************
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;39&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;  * GLOBAL PROTOTYPES
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;40&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;  **********************/&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;41&lt;/span&gt;  &lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;lv_port_indev_init&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;42&lt;/span&gt;  &lt;span class=&#34;cm&#34;&gt;/**********************
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;43&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;  *      MACROS
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;44&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;  **********************/&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;45&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;46&lt;/span&gt;  &lt;span class=&#34;cp&#34;&gt;#ifdef __cplusplus
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;47&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;cm&#34;&gt;/* extern &amp;#34;C&amp;#34; */&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;48&lt;/span&gt;  &lt;span class=&#34;cp&#34;&gt;#endif
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;49&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;50&lt;/span&gt;  &lt;span class=&#34;cp&#34;&gt;#endif &lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;/*LV_PORT_INDEV_TEMPL_H*/&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;51&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;52&lt;/span&gt;  &lt;span class=&#34;cp&#34;&gt;#endif &lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;/*Disable/Enable content*/&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;53&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;Now open the &lt;code&gt;lv_port_indev.c&lt;/code&gt; file and add the following lines:
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;//enable the content 
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;cp&#34;&gt;#if 1
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;  &lt;span class=&#34;cm&#34;&gt;/*********************
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;  *      INCLUDES
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;  *********************/&lt;/span&gt;    
+&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;// include the header file
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;Arduino.h&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;cp&#34;&gt;# include &amp;lt;lv_examples.h&amp;gt;
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;#34;lv_port_indev.h&amp;#34;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;11&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;cm&#34;&gt;/*********************
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;12&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;      DEFINES
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;13&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;  *********************/&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;14&lt;/span&gt;  &lt;span class=&#34;n&#34;&gt;buttons_c&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;buttons&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;15&lt;/span&gt;      &lt;span class=&#34;p&#34;&gt;{.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;pin_name&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;BUTTON_1 &amp;#34;&lt;/span&gt;  &lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;pin_no&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;BUTTON_1&lt;/span&gt;  &lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;button_no&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;},&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;16&lt;/span&gt;      &lt;span class=&#34;p&#34;&gt;{.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;pin_name&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;BUTTON_2 &amp;#34;&lt;/span&gt;  &lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;pin_no&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;BUTTON_2&lt;/span&gt;  &lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;button_no&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;},&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;17&lt;/span&gt;      &lt;span class=&#34;p&#34;&gt;{.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;pin_name&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;BUTTON_3 &amp;#34;&lt;/span&gt;  &lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;pin_no&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;BUTTON_3&lt;/span&gt;  &lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;button_no&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;18&lt;/span&gt;  &lt;span class=&#34;p&#34;&gt;};&lt;/span&gt;    
+&lt;span class=&#34;ln&#34;&gt;19&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;// in the fuction void lv_port_indev_init(void)
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;20&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;cm&#34;&gt;/*Assign buttons to points on the screen change according to your preference*/&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;21&lt;/span&gt;  &lt;span class=&#34;k&#34;&gt;static&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;lv_point_t&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;btn_points&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[(&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;sizeof&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;buttons&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;/&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;sizeof&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;buttons_c&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;22&lt;/span&gt;      &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;80&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;25&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;},&lt;/span&gt;   &lt;span class=&#34;cm&#34;&gt;/*Button 1 at cordinate on screen -&amp;gt; x:80; y:10*/&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;23&lt;/span&gt;      &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;80&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;85&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;},&lt;/span&gt;   &lt;span class=&#34;cm&#34;&gt;/*Button 2 at cordinate on screen -&amp;gt; x:80; y:30*/&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;24&lt;/span&gt;      &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;80&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;50&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;},&lt;/span&gt;   &lt;span class=&#34;cm&#34;&gt;/*Button 3 at cordinate on screen -&amp;gt; x:80; y:50*/&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;25&lt;/span&gt;  &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;    
+&lt;span class=&#34;ln&#34;&gt;26&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;// in the fuction static void button_init(void)
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;27&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;cm&#34;&gt;/* Initialize your buttons */&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;28&lt;/span&gt;  &lt;span class=&#34;k&#34;&gt;static&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;button_init&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;29&lt;/span&gt;  &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;30&lt;/span&gt;      &lt;span class=&#34;kt&#34;&gt;uint8_t&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;31&lt;/span&gt;      &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;sizeof&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;buttons&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;/&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;sizeof&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;buttons_c&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; 
+&lt;span class=&#34;ln&#34;&gt;32&lt;/span&gt;      &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;33&lt;/span&gt;          &lt;span class=&#34;n&#34;&gt;pinMode&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;buttons&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;].&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;pin_no&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;buttons&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;].&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;pin_mode&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;INPUT&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;34&lt;/span&gt;          &lt;span class=&#34;n&#34;&gt;buttons&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;].&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;pin_state&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;digitalRead&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;buttons&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;].&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;pin_no&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;35&lt;/span&gt;          &lt;span class=&#34;n&#34;&gt;buttons&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;].&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;pin_last_state&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;buttons&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;].&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;pin_state&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;  
+&lt;span class=&#34;ln&#34;&gt;36&lt;/span&gt;          &lt;span class=&#34;n&#34;&gt;buttons&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;].&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;pin_last_state&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;37&lt;/span&gt;      &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;38&lt;/span&gt;  &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;   
+&lt;span class=&#34;ln&#34;&gt;39&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;// in the fuction static int8_t button_get_pressed_id(void)
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;40&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;cm&#34;&gt;/*Get ID  (1- 3) of the pressed button*/&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;41&lt;/span&gt;  &lt;span class=&#34;k&#34;&gt;static&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int8_t&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;button_get_pressed_id&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;42&lt;/span&gt;  &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;43&lt;/span&gt;      &lt;span class=&#34;kt&#34;&gt;uint8_t&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;    
+&lt;span class=&#34;ln&#34;&gt;44&lt;/span&gt;      &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;sizeof&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;buttons&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;/&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;sizeof&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;buttons_c&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; 
+&lt;span class=&#34;ln&#34;&gt;45&lt;/span&gt;      &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;46&lt;/span&gt;          &lt;span class=&#34;n&#34;&gt;buttons&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;].&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;pin_last_state&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;buttons&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;].&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;pin_state&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;47&lt;/span&gt;          &lt;span class=&#34;n&#34;&gt;buttons&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;].&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;pin_state&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;digitalRead&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;buttons&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;].&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;pin_no&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;48&lt;/span&gt;          &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;button_is_pressed&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;buttons&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;].&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;pin_state&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;49&lt;/span&gt;              &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;buttons&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;].&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;button_no&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;                &lt;span class=&#34;c1&#34;&gt;// return button no.
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;50&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;      &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;51&lt;/span&gt;      &lt;span class=&#34;cm&#34;&gt;/*No button pressed*/&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;52&lt;/span&gt;      &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;53&lt;/span&gt;  &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;54&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;55&lt;/span&gt;  &lt;span class=&#34;cm&#34;&gt;/*Test if `id` button is pressed or not*/&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;56&lt;/span&gt;  &lt;span class=&#34;k&#34;&gt;static&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;bool&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;button_is_pressed&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;uint8_t&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;id&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;57&lt;/span&gt;  &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;58&lt;/span&gt;      &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;id&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;59&lt;/span&gt;          &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;true&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;60&lt;/span&gt;      &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;false&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;61&lt;/span&gt;  &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Step 4:&lt;/strong&gt; Now open a new file in PlatformIO from the &lt;code&gt;src&lt;/code&gt; folder like &lt;code&gt;main.cpp&lt;/code&gt; or in the ArduinoIDE open up a main file which contain the &lt;code&gt;void setup()&lt;/code&gt; fuction and do these changes:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;    &lt;span class=&#34;c1&#34;&gt;// include the following library
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;Arduino.h&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;lvgl.h&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;main.h&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;TFT_eSPI.h&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;lv_examples.h&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;7&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;#34;../lib/lv_port_indev/lv_port_indev.h&amp;#34;    &lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;And in &lt;code&gt;void setup()&lt;/code&gt; fuction add this after display driver initialization :&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;    &lt;span class=&#34;n&#34;&gt;lv_disp_drv_register&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;disp_drv&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;    &lt;span class=&#34;cm&#34;&gt;/* Try an example from the lv_examples repository
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;		 * https://github.com/lvgl/lv_examples*/&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;    &lt;span class=&#34;n&#34;&gt;lv_port_indev_init&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;   &lt;span class=&#34;c1&#34;&gt;// add this line 
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;n&#34;&gt;lv_ex_btn_1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;          &lt;span class=&#34;c1&#34;&gt;// calling from lv_example 
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;Step 6:&lt;/strong&gt; Now upload the program to your ESP32. Here is the content of   &lt;code&gt;platformio.ini&lt;/code&gt; file:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;    &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nl&#34;&gt;env&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;esp32dev&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;    &lt;span class=&#34;n&#34;&gt;platform&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;espressif32&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;    &lt;span class=&#34;n&#34;&gt;board&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;esp32dev&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;    &lt;span class=&#34;n&#34;&gt;framework&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;arduino&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;    &lt;span class=&#34;n&#34;&gt;monitor_speed&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;115200&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;    &lt;span class=&#34;n&#34;&gt;monitor_port&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;dev&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ttyUSB0&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;    &lt;span class=&#34;n&#34;&gt;lib_deps&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; 
+&lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;        &lt;span class=&#34;n&#34;&gt;lvgl&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;lv_arduino&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;@&lt;/span&gt;&lt;span class=&#34;mf&#34;&gt;2.1.5&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;        &lt;span class=&#34;n&#34;&gt;bodmer&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;TFT_eSPI&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;@&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;^&lt;/span&gt;&lt;span class=&#34;mf&#34;&gt;2.3.59&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;        &lt;span class=&#34;n&#34;&gt;greiman&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;SdFat&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;@&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;^&lt;/span&gt;&lt;span class=&#34;mf&#34;&gt;2.0.4&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;11&lt;/span&gt;        &lt;span class=&#34;n&#34;&gt;lvgl&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;lvgl&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;@&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;^&lt;/span&gt;&lt;span class=&#34;mf&#34;&gt;7.10.0&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;12&lt;/span&gt;        &lt;span class=&#34;n&#34;&gt;lvgl&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;lv_examples&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;@&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;^&lt;/span&gt;&lt;span class=&#34;mf&#34;&gt;7.10.0&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;13&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;Conclusion:&lt;/strong&gt; The whole output should look somthing like this and The above code should generate this result:&lt;/p&gt;
+ &lt;p align=&#34;center&#34;&gt;
+&lt;img align=&#34;center&#34; width=&#34;500&#34; height=&#34;300&#34; class=&#34;special-img-class&#34; src=&#34;https://pranav083.github.io/images/lvgl_hardware_button_setup/tested_lvgl1.gif&#34; alt =&#34;ESP32&#34; title =&#34;ESP32&#34; &gt;
+&lt;/p&gt;
+&lt;p&gt;This is some other example running :&lt;/p&gt;
+ &lt;p align=&#34;center&#34;&gt;
+&lt;img align=&#34;center&#34; width=&#34;500&#34; height=&#34;300&#34; class=&#34;special-img-class&#34; src=&#34;https://pranav083.github.io/images/lvgl_hardware_button_setup/tested_lvgl.gif&#34; alt =&#34;ESP32&#34; title =&#34;ESP32&#34; &gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; Below is the example of wrong configuration.e.g, in the &lt;em&gt;&lt;strong&gt;step 3&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;#define LV_HOR_RES_MAX          (100) or &lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;//10      
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;#define LV_VER_RES_MAX          (100) or &lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;//10  
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;Reference Note&lt;/strong&gt;:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;wrong decleration problem : &lt;a href=&#34;https://forum.lvgl.io/t/framebuffer-clipping-top-and-touchscreen-input-issues/1816&#34;&gt;issue&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/me-no-dev/EspExceptionDecoder/releases/tag/1.1.0&#34;&gt;ESP DEBUGGER&lt;/a&gt; and follow this istallation &lt;a href=&#34;https://forum.arduino.cc/index.php?topic=606917.msg4117591#msg4117591&#34;&gt;guide&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;lvgl  event handler &lt;a href=&#34;https://docs.lvgl.io/latest/en/html/overview/event.html#send-events-manually&#34;&gt;guide&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;help-in-improving-the-guide&#34;&gt;Help in improving the guide&lt;/h4&gt;
+&lt;p&gt;Thanks for the Futuristic Labs Pvt. Ltd. for providing me the resources of the project.&lt;br&gt;
 Please if you find any useful improvement feel free to contact at : @pranav083&lt;/p&gt;
 
         
