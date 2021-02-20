@@ -24,7 +24,7 @@
 <meta property="og:url" content="https://pranav083.github.io/post/lvgl_esp32_setup/" />
 <meta property="og:title" content="LVGL esp32 setup" />
 <meta property="og:description" content="Sample article showcasing basic Markdown syntax and formatting for HTML elements." />
-<meta property="og:image" content="https://pranav083.github.io/images/esp32.png" />
+<meta property="og:image" content="https://pranav083.github.io/images/lvgl_esp32_setup/logo.png" />
 <link rel="bottom_logo" sizes="180x180" href='https://pranav083.github.io/icons/bottom_logo.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://pranav083.github.io/icons/favicon-32x32.png'>
 <link rel="manifest" href='https://pranav083.github.io/icons/site.webmanifest'>
@@ -92,6 +92,7 @@
     <div class="nav_sub">
       <span class="nav_child"></span>
         <a href="https://www.linkedin.com/pranav083" class="nav_child nav_item">LinkedIn</a>
+        <a href="https://s3.amazonaws.com/attachments.angel.co/5578048-19bf7af1fb01f70f08485f1a99e15b9c.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAJS6W3HGZGRJIRBTA%2F20210220%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20210220T172133Z&amp;X-Amz-Expires=3600&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=4fdff4647026dd87b04a6b25ac2c414aeb745e065bc941395b6e5195e0f2b3b4" class="nav_child nav_item">Resume</a>
         <a href="https://twitter.com/pranav083" class="nav_child nav_item">Twitter</a>
     </div>
   </div>
@@ -201,7 +202,7 @@
     
     <h1 id="arduino-esp32-lvgl-lv_arduino-lv_examples-st7735s">Arduino Esp32 LVGL lv_arduino lv_examples st7735s</h1>
 <p>This setup guide is made using the following hardware and software</p>
-<p><strong>Hardware Components And Supplies :-</strong></p>
+<p><strong>Hardware Components And Supplies :</strong></p>
 <ol>
 <li><a href="https://components101.com/sites/default/files/component_pin/ESP32-Pinout.png">Esp32 Dev Module</a></li>
 <li>ST7735s 1.8&quot; TFT Display 128 x 160</li>
@@ -209,7 +210,7 @@
 <li>Jumper Cable (Male to Male)</li>
 <li>BreadBoard</li>
 </ol>
-<p><strong>Software Used in the project</strong></p>
+<p><strong>Software Used in the project :</strong></p>
 <ol>
 <li><a href="https://platformio.org/install/ide?install=vscode">PlatformIO</a></li>
 <li><a href="https://code.visualstudio.com/download">Vscode</a></li>
@@ -288,10 +289,10 @@
 </tbody>
 </table>
 <p align="center">
-<img align="center" width="500" height="300" class="special-img-class" src="/images/lvgl_esp32_setup/11-02-2021-13-20-32.png" alt ="ST7735s" title ="different st7735s display"  >  
+<img align="center" width="500" height="300" class="special-img-class" src="../../static/images/lvgl_esp32_setup/11-02-2021-13-20-32.png" alt ="ST7735s" title ="different st7735s display"  >  
 </p>
 <p align="center">
-<img align="center" width="500" height="300" class="special-img-class" src="/images/lvgl_esp32_setup/11-02-2021-13-45-18.png" alt ="ESP32" title ="ESP32" >
+<img align="center" width="500" height="300" class="special-img-class" src="../../static/images/lvgl_esp32_setup/11-02-2021-13-45-18.png" alt ="ESP32" title ="ESP32" >
 </p>
 <p><strong>Step 2:</strong> * Now do the following setup in the downloaded library as in my case i used PlatformIO so i will go to :<br>
 <code>{your platformIO project name}/.pio/libdeps/esp32dev/TFT_eSPI/User_Setup.h</code><br>
@@ -425,14 +426,14 @@ and for the Arduino IDE go to <code>/home/{USERNAME}/Arduino/libraries/TFT_eSPI/
 <span class="ln"> 9</span>	<span class="n">lvgl</span><span class="o">/</span><span class="n">lvgl</span><span class="err">@</span><span class="o">^</span><span class="mf">7.10.0</span>
 <span class="ln">10</span>	<span class="n">lvgl</span><span class="o">/</span><span class="n">lv_examples</span><span class="err">@</span><span class="o">^</span><span class="mf">7.10.0</span>
 </code></pre></div><p><strong>Conclusion:</strong> The whole output should look somthing like this:</p>
-<p><img src="/images/lvgl_esp32_setup/11-02-2021-16-09-33.png" alt="" title="correct configuration">
+<p><img src="../../static/images/lvgl_esp32_setup/11-02-2021-16-09-33.png" alt="" title="correct configuration">
 <strong>Note:</strong> Below is the example of wrong configuration.e.g, in the <em><strong>step 3</strong></em></p>
 <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="ln">1</span><span class="cp">#define LV_HOR_RES_MAX          (100) or </span><span class="c1">//10      
 </span><span class="ln">2</span><span class="c1"></span><span class="cp">#define LV_VER_RES_MAX          (100) or </span><span class="c1">//10  
-</span></code></pre></div><p><img src="/images/lvgl_esp32_setup/11-02-2021-16-13-58.png" alt="" title="Wrong configuration"></p>
+</span></code></pre></div><p><img src="../../static/images/lvgl_esp32_setup/11-02-2021-16-13-58.png" alt="" title="Wrong configuration"></p>
 <h4 id="help-in-improving-the-guide">Help in improving the guide</h4>
 <p>Thanks for the Futuristic Labs Pvt. Ltd. for providing me the resources of the project.
-Please if you find any useful improvement feel free to contact at : @pranav083</p>
+Please if you find any useful improvement feel free to contact at : <a href="https://twitter.com/pranav083">@pranav083</a> or comment below.</p>
 
     
       <div id="disqus_thread"></div>
@@ -468,11 +469,17 @@ Please if you find any useful improvement feel free to contact at : @pranav083</
     <h2 class="mt-4">Featured Posts</h2>
     <ul>
       <li>
+        <a href="https://pranav083.github.io/post/stepper_stspin220/" class="nav-link">Stepper STSPIN220</a>
+      </li>
+      <li>
         <a href="https://pranav083.github.io/post/lvgl_hardware_button_setup/" class="nav-link">LVGL hardware button setup</a>
       </li>
     </ul>
     <h2 class="mt-4">Recent Posts</h2>
     <ul class="flex-column">
+      <li>
+        <a href="https://pranav083.github.io/post/stepper_stspin220/" class="nav-link">Stepper STSPIN220</a>
+      </li>
       <li>
         <a href="https://pranav083.github.io/post/lvgl_hardware_button_setup/" class="nav-link">LVGL hardware button setup</a>
       </li>
@@ -488,8 +495,8 @@ Please if you find any useful improvement feel free to contact at : @pranav083</
           <span class="button_tally">3</span>
         </a>
         
-        <a href='https://pranav083.github.io/categories/gallery/' class="post_tag button button_translucent">
-          GALLERY
+        <a href='https://pranav083.github.io/categories/library/' class="post_tag button button_translucent">
+          LIBRARY
           <span class="button_tally">1</span>
         </a>
         
@@ -504,8 +511,8 @@ Please if you find any useful improvement feel free to contact at : @pranav083</
           <span class="button_tally">2</span>
         </a>
         
-        <a href='https://pranav083.github.io/series/writting-guide/' class="post_tag button button_translucent">
-          WRITTING-GUIDE
+        <a href='https://pranav083.github.io/series/library/' class="post_tag button button_translucent">
+          LIBRARY
           <span class="button_tally">1</span>
         </a>
         
@@ -515,6 +522,11 @@ Please if you find any useful improvement feel free to contact at : @pranav083</
     <div>
       <h2 class="mt-4 taxonomy" id="tags-section">Tags</h2>
       <nav class="tags_nav">
+        <a href='https://pranav083.github.io/tags/platformio/' class="post_tag button button_translucent">
+          PLATFORMIO
+          <span class="button_tally">3</span>
+        </a>
+        
         <a href='https://pranav083.github.io/tags/arduino/' class="post_tag button button_translucent">
           ARDUINO
           <span class="button_tally">2</span>
@@ -527,11 +539,6 @@ Please if you find any useful improvement feel free to contact at : @pranav083</
         
         <a href='https://pranav083.github.io/tags/lvgl/' class="post_tag button button_translucent">
           LVGL
-          <span class="button_tally">2</span>
-        </a>
-        
-        <a href='https://pranav083.github.io/tags/platformio/' class="post_tag button button_translucent">
-          PLATFORMIO
           <span class="button_tally">2</span>
         </a>
         
@@ -565,8 +572,13 @@ Please if you find any useful improvement feel free to contact at : @pranav083</
           <span class="button_tally">1</span>
         </a>
         
-        <a href='https://pranav083.github.io/tags/themes/' class="post_tag button button_translucent">
-          THEMES
+        <a href='https://pranav083.github.io/tags/stepper/' class="post_tag button button_translucent">
+          STEPPER
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='https://pranav083.github.io/tags/stspin220/' class="post_tag button button_translucent">
+          STSPIN220
           <span class="button_tally">1</span>
         </a>
         

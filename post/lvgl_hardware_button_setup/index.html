@@ -17,14 +17,14 @@
 <meta property="og:locale" content="en" />
 
 <meta property="og:type" content="article">
-<meta name="description" content="Sample article showcasing basic Markdown syntax and formatting for HTML elements.">
+<meta name="description" content="showing setup of esp32 lvgl and hardware button">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:creator" content="@pranav083">
 <meta name="twitter:title" content="LVGL hardware button setup" />
 <meta property="og:url" content="https://pranav083.github.io/post/lvgl_hardware_button_setup/" />
 <meta property="og:title" content="LVGL hardware button setup" />
-<meta property="og:description" content="Sample article showcasing basic Markdown syntax and formatting for HTML elements." />
-<meta property="og:image" content="https://pranav083.github.io/images/esp32.png" />
+<meta property="og:description" content="showing setup of esp32 lvgl and hardware button" />
+<meta property="og:image" content="https://pranav083.github.io/images/lvgl_hardware_button_setup/logo.png" />
 <link rel="bottom_logo" sizes="180x180" href='https://pranav083.github.io/icons/bottom_logo.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://pranav083.github.io/icons/favicon-32x32.png'>
 <link rel="manifest" href='https://pranav083.github.io/icons/site.webmanifest'>
@@ -92,6 +92,7 @@
     <div class="nav_sub">
       <span class="nav_child"></span>
         <a href="https://www.linkedin.com/pranav083" class="nav_child nav_item">LinkedIn</a>
+        <a href="https://s3.amazonaws.com/attachments.angel.co/5578048-19bf7af1fb01f70f08485f1a99e15b9c.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAJS6W3HGZGRJIRBTA%2F20210220%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20210220T172133Z&amp;X-Amz-Expires=3600&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=4fdff4647026dd87b04a6b25ac2c414aeb745e065bc941395b6e5195e0f2b3b4" class="nav_child nav_item">Resume</a>
         <a href="https://twitter.com/pranav083" class="nav_child nav_item">Twitter</a>
     </div>
   </div>
@@ -165,8 +166,6 @@
       </a>
       <a href='https://pranav083.github.io/tags/lvgl' class="post_tag button button_translucent">lvgl
       </a>
-      <a href='https://pranav083.github.io/tags/arduino' class="post_tag button button_translucent">arduino
-      </a>
       <a href='https://pranav083.github.io/tags/platformio' class="post_tag button button_translucent">platformIO
       </a>
       <a href='https://pranav083.github.io/tags/button' class="post_tag button button_translucent">button
@@ -208,8 +207,9 @@
 <li>USB Cable to upload the code</li>
 <li>Jumper Cable (Male to Male)</li>
 <li>BreadBoard</li>
+<li>Push button or Capacitive touch button</li>
 </ol>
-<p><strong>Software Used in the project</strong></p>
+<p><strong>Software Used in the project :</strong></p>
 <ol>
 <li><a href="https://platformio.org/install/ide?install=vscode">PlatformIO</a></li>
 <li><a href="https://code.visualstudio.com/download">Vscode</a></li>
@@ -224,22 +224,24 @@
 <p><strong>Note:-</strong> It is recommended to go with that version of the library as it is tested on the system and it is working properly. And please go through the Display SETUP guide once.</p>
 <!-- put the link of setup guide lvgl esp32 -->
 <h4 id="introduction">Introduction:</h4>
-<p>The main aim of this project is to able to run the LVGL library on the st7735s 128 x 160 TFT display with using esp32 and configure multiple button input from the different GPIO of the ESP32 and pass that data command to the screen fuctionality. I am driving my system in the landscape mode you can go with portrait mode also but you to configure the setting properly. If faces any problen on the screen setup go to the previous guide of lvgl screen setup<a href="put-the-link">put the link</a> .
+<p>The main aim of this project is to able to run the LVGL library on the st7735s 128 x 160 TFT display with using esp32 and configure multiple button input from the different GPIO of the ESP32 and pass that data command to the screen fuctionality. I am driving my system in the landscape mode you can go with portrait mode also but you to configure the setting properly. If faces any problen on the screen setup go to the previous guide of lvgl screen <a href=".././lvgl_esp32_setup"><strong>Setup</strong></a>.
 In this setup , I have put total of 8 button from the esp32 which are both input and touch configurable in the esp32 board</p>
-<p><strong>Earlier Tested</strong> : 1. Earlier i tested the blog for setting and registring the button on the lvgl, from this <a href="https://blog.lvgl.io/2019-01-08/hardware-button">Guide</a> <strong>some functions depriciated</strong> in the guide.
-2. But unforunately that guide have setup defined on the stm32 board and also itis for the older version of the lvgl and some of the fuction are depriciated in the newer version of the lvgl.</p>
+<p><strong>Earlier Tested</strong> : 1. Earlier I tested the blog for setting and registring the button on the lvgl, from this <a href="https://blog.lvgl.io/2019-01-08/hardware-button">Guide</a> <strong>some functions depriciated</strong> in the guide.</p>
+<ol>
+<li>But unforunately that guide have setup defined on the stm32 board and also itis for the older version of the lvgl and some of the fuction are depriciated in the newer version of the lvgl.</li>
+</ol>
 <h3 id="putting-the-setup">putting the Setup</h3>
 <p><strong>Step 1</strong>:Create a new project in platformIO and Do the connection of the esp32 with Capacitive touch button are as follows:</p>
 <p align="center">
-<img align="center" width="500" height="300" class="special-img-class" src="/images/lvgl_hardware_button_setup/16-02-2021-16-10-44.png" alt ="ST7735s" title ="Capacitive Touch sensor"  >  
+<img align="center" width="500" height="300" class="special-img-class" src="../../static/images/lvgl_hardware_button_setup/16-02-2021-16-10-44.png" alt ="ST7735s" title ="Capacitive Touch sensor"  >  
 </p>  
 <p>$$\text{Capacitive Touch sensor}$$</p>
 <p align="center">
-<img align="center" width="500" height="300" class="special-img-class" src="/images/lvgl_hardware_button_setup/16-02-2021-16-50-49.png" alt ="ST7735s" title ="Capacitive Touch sensor setup"  >  
+<img align="center" width="500" height="300" class="special-img-class" src="../../static/images/lvgl_hardware_button_setup/16-02-2021-16-50-49.png" alt ="ST7735s" title ="Capacitive Touch sensor setup"  >  
 </p>
 <p>$$\text{Capacitive Touch sensor setup}$$</p>
 <p align="center">
-<img align="center" width="500" height="300" class="special-img-class" src="/images/lvgl_esp32_setup/11-02-2021-13-45-18.png" alt ="ESP32" title ="ESP32" >
+<img align="center" width="500" height="300" class="special-img-class" src="../../static/images/lvgl_esp32_setup/11-02-2021-13-45-18.png" alt ="ESP32" title ="ESP32" >
 </p>
 <p>$$\text{ESP32 dev Board }$$</p>
 <h4 id="system-connections">System Connections:</h4>
@@ -444,11 +446,11 @@ and for the Arduino IDE go to <code>/home/{USERNAME}/Arduino/libraries/TFT_eSPI/
 <span class="ln">13</span>
 </code></pre></div><p><strong>Conclusion:</strong> The whole output should look somthing like this and The above code should generate this result:</p>
  <p align="center">
-<img align="center" width="500" height="300" class="special-img-class" src="/images/lvgl_hardware_button_setup/tested_lvgl1.gif" alt ="ESP32" title ="ESP32" >
+<img align="center" width="500" height="300" class="special-img-class" src="../../static/images/lvgl_hardware_button_setup/tested_lvgl1.gif" alt ="ESP32" title ="ESP32" >
 </p>
 <p>This is some other example running :</p>
  <p align="center">
-<img align="center" width="500" height="300" class="special-img-class" src="/images/lvgl_hardware_button_setup/tested_lvgl.gif" alt ="ESP32" title ="ESP32" >
+<img align="center" width="500" height="300" class="special-img-class" src="../../static/images/lvgl_hardware_button_setup/tested_lvgl.gif" alt ="ESP32" title ="ESP32" >
 </p>
 <p><strong>Note:</strong> Below is the example of wrong configuration.e.g, in the <em><strong>step 3</strong></em></p>
 <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="ln">1</span><span class="cp">#define LV_HOR_RES_MAX          (100) or </span><span class="c1">//10      
@@ -461,7 +463,7 @@ and for the Arduino IDE go to <code>/home/{USERNAME}/Arduino/libraries/TFT_eSPI/
 </ol>
 <h4 id="help-in-improving-the-guide">Help in improving the guide</h4>
 <p>Thanks for the Futuristic Labs Pvt. Ltd. for providing me the resources of the project.<br>
-Please if you find any useful improvement feel free to contact at : @pranav083</p>
+Please if you find any useful improvement feel free to contact at : <a href="https://twitter.com/pranav083">@pranav083</a> or comment below.</p>
 
     
       <div id="disqus_thread"></div>
@@ -497,11 +499,17 @@ Please if you find any useful improvement feel free to contact at : @pranav083</
     <h2 class="mt-4">Featured Posts</h2>
     <ul>
       <li>
+        <a href="https://pranav083.github.io/post/stepper_stspin220/" class="nav-link">Stepper STSPIN220</a>
+      </li>
+      <li>
         <a href="https://pranav083.github.io/post/lvgl_esp32_setup/" class="nav-link">LVGL esp32 setup</a>
       </li>
     </ul>
     <h2 class="mt-4">Recent Posts</h2>
     <ul class="flex-column">
+      <li>
+        <a href="https://pranav083.github.io/post/stepper_stspin220/" class="nav-link">Stepper STSPIN220</a>
+      </li>
       <li>
         <a href="https://pranav083.github.io/post/lvgl_esp32_setup/" class="nav-link">LVGL esp32 setup</a>
       </li>
@@ -517,8 +525,8 @@ Please if you find any useful improvement feel free to contact at : @pranav083</
           <span class="button_tally">3</span>
         </a>
         
-        <a href='https://pranav083.github.io/categories/gallery/' class="post_tag button button_translucent">
-          GALLERY
+        <a href='https://pranav083.github.io/categories/library/' class="post_tag button button_translucent">
+          LIBRARY
           <span class="button_tally">1</span>
         </a>
         
@@ -533,8 +541,8 @@ Please if you find any useful improvement feel free to contact at : @pranav083</
           <span class="button_tally">2</span>
         </a>
         
-        <a href='https://pranav083.github.io/series/writting-guide/' class="post_tag button button_translucent">
-          WRITTING-GUIDE
+        <a href='https://pranav083.github.io/series/library/' class="post_tag button button_translucent">
+          LIBRARY
           <span class="button_tally">1</span>
         </a>
         
@@ -544,6 +552,11 @@ Please if you find any useful improvement feel free to contact at : @pranav083</
     <div>
       <h2 class="mt-4 taxonomy" id="tags-section">Tags</h2>
       <nav class="tags_nav">
+        <a href='https://pranav083.github.io/tags/platformio/' class="post_tag button button_translucent">
+          PLATFORMIO
+          <span class="button_tally">3</span>
+        </a>
+        
         <a href='https://pranav083.github.io/tags/arduino/' class="post_tag button button_translucent">
           ARDUINO
           <span class="button_tally">2</span>
@@ -556,11 +569,6 @@ Please if you find any useful improvement feel free to contact at : @pranav083</
         
         <a href='https://pranav083.github.io/tags/lvgl/' class="post_tag button button_translucent">
           LVGL
-          <span class="button_tally">2</span>
-        </a>
-        
-        <a href='https://pranav083.github.io/tags/platformio/' class="post_tag button button_translucent">
-          PLATFORMIO
           <span class="button_tally">2</span>
         </a>
         
@@ -594,8 +602,13 @@ Please if you find any useful improvement feel free to contact at : @pranav083</
           <span class="button_tally">1</span>
         </a>
         
-        <a href='https://pranav083.github.io/tags/themes/' class="post_tag button button_translucent">
-          THEMES
+        <a href='https://pranav083.github.io/tags/stepper/' class="post_tag button button_translucent">
+          STEPPER
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='https://pranav083.github.io/tags/stspin220/' class="post_tag button button_translucent">
+          STSPIN220
           <span class="button_tally">1</span>
         </a>
         

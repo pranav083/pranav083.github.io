@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>library on Namaste</title>
+    <link>https://pranav083.github.io/categories/library/</link>
+    <description>Recent content in library on Namaste</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Copyright © 2016–2030, Pranav Kumar; all rights reserved.</copyright>
+    <lastBuildDate>Sat, 20 Feb 2021 22:56:28 +0530</lastBuildDate><atom:link href="https://pranav083.github.io/categories/library/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Stepper STSPIN220</title>
+      <link>https://pranav083.github.io/post/stepper_stspin220/</link>
+      <pubDate>Sat, 20 Feb 2021 22:56:28 +0530</pubDate>
+      
+      <guid>https://pranav083.github.io/post/stepper_stspin220/</guid>
+      <description>
+        
+          &lt;h1 id=&#34;stepper_stspin220-library-arduino&#34;&gt;Stepper_STSPIN220-library Arduino&lt;/h1&gt;
+&lt;h2&gt; &lt;u&gt;LIBRARY DOWNLOAD&lt;/u&gt; : &lt;a href=&#34;https://github.com/pranav083/Stepper_STSPIN220-library&#34;&gt;&lt;i&gt;&lt;b&gt;LINK&lt;/b&gt;&lt;/i&gt;&lt;/a&gt;&lt;/h2&gt;
+This setup guide is made using the following hardware and software
+&lt;p&gt;&lt;strong&gt;Hardware Components And Supplies :&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Arduino IDE compatable board(e.g, Arduino Mega etc.)&lt;/li&gt;
+&lt;li&gt;STSPIN220 stepper driver&lt;/li&gt;
+&lt;li&gt;stepper motor with bipolar rated (&amp;lt; 1.2 Amps)&lt;/li&gt;
+&lt;li&gt;USB Cable to upload the code&lt;/li&gt;
+&lt;li&gt;Jumper Cable (Male to Male)&lt;/li&gt;
+&lt;li&gt;BreadBoard&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;Software Used in the project :&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://platformio.org/install/ide?install=vscode&#34;&gt;PlatformIO&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://code.visualstudio.com/download&#34;&gt;Vscode&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;introduction&#34;&gt;&lt;strong&gt;Introduction&lt;/strong&gt;:&lt;/h3&gt;
+&lt;p&gt;This is the library which was been developed for the 1/256 steps stepper motor driver mainly with the arduino. This stepper driver is a silent stepper driver which is used mailly in the operation of low current consuming stepper motors.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note :&lt;/strong&gt; This stepper motor should be used with high current consuming stepper motor motor such as some high grades of NEMA 17 and above.&lt;/p&gt;
+&lt;p align=&#34;center&#34;&gt;
+&lt;img align=&#34;center&#34; width=&#34;300&#34; height=&#34;300&#34; class=&#34;special-img-class&#34; src=&#34;../../static/images/Stepper_STSPIN220/2021-02-19-00-57-50.png&#34; alt =&#34;ESP32&#34; title =&#34;ESP32&#34; &gt;
+&lt;/p&gt;
+&lt;p&gt;See the Datasheet: &lt;a href=&#34;https://www.st.com/resource/en/datasheet/stspin220.pdf&#34;&gt;https://www.st.com/resource/en/datasheet/stspin220.pdf&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The Stepper_STSPIN220 stepper driver is for Pololu stepper driver boards
+and compatible clones. These boards use the Allegro Stepper_STSPIN220
+stepper motor driver IC. (see Allegro website for datasheet)&lt;/p&gt;
+&lt;p&gt;This library diverges from others that are around, in that it
+assumes that the MS1, MS2, MS3(DIR) and MS4(STEP) pins are connected to gpio
+pins on the Arduino, allowing control over the microstepping
+modes.&lt;/p&gt;
+&lt;p&gt;The Stepper_STSPIN220 is capable of microstepping down to 1/256 of a step, enabling fine control over the stepper motor. This fine control
+can be used in, among other things, 3D printers.&lt;/p&gt;
+&lt;p&gt;This library provides an interface for setting the different
+step modes, going from full step down to 1/256 step, using a
+simple setter function, where the argument is 1, 2, 4, 8, 16, 32, 64, 128 or 256.&lt;/p&gt;
+&lt;p&gt;At just after the reset or wake up from standby the device is then only able to
+set the microstepping mode.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;SL NO.&lt;/th&gt;
+&lt;th&gt;MODE4(DIR)&lt;/th&gt;
+&lt;th&gt;MODE3(STCK)&lt;/th&gt;
+&lt;th&gt;MODE2&lt;/th&gt;
+&lt;th&gt;MODE1&lt;/th&gt;
+&lt;th&gt;Step mode&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;1.&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;Full      step&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2.&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1/2       step&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;3.&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1/4th     step&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;4.&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1/8th     step&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;5.&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1/16th    step&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;6.&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1/32nd    step&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;7.&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1/64th    step&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;8.&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1/128th   step&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;9.&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1/256th   step&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt;
+Lower delay values can be used in the microstepping mode.
+Values as low as 25 usec can be used in the 1/256 mode
+with some motors(for more info refer to the &lt;a href=&#34;https://www.st.com/resource/en/datasheet/stspin220.pdf&#34;&gt;datasheet&lt;/a&gt;).&lt;/p&gt;
+&lt;h3 id=&#34;file-content-&#34;&gt;&lt;strong&gt;File content :&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;&lt;code&gt;Stepper_STSPIN220.cpp&lt;/code&gt;&lt;/em&gt; -- cpp file for using the Stepper_STSPIN220 stepper driver.&lt;br&gt;
+&lt;em&gt;&lt;code&gt;Stepper_STSPIN220.h&lt;/code&gt;&lt;/em&gt;  -- header file for the declaration of fuction and class of the stepper driver.&lt;/p&gt;
+&lt;h4 id=&#34;fuctions-contain-of-library&#34;&gt;Fuctions contain of library:&lt;/h4&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;Stepper_STSPIN220&lt;/strong&gt;&lt;/em&gt; : Stepper class fuctions&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;Stepper_STSPIN220(unsigned long motor_steps, int ms1_pin, int ms2_pin, int ms3_pin, int ms4_pin, int enable_pin)&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;This is the constructor fuction call at the initialization of file.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;unsigned long motor_steps&lt;/code&gt; : put the total no. of motor steps&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;int ms1_pin&lt;/code&gt; : define the pin from arduino board&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;int ms2_pin&lt;/code&gt; : define the pin from arduino board&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;int ms3_pin&lt;/code&gt; : define the pin from arduino board&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;int ms4_pin&lt;/code&gt; : define the pin from arduino board&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;int enable_pin&lt;/code&gt; : if pin is their then give the pin no.( default is -1)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;void setDelay(unsigned long delay)&lt;/code&gt;
+This should be use to provide delay(&lt;code&gt;microsecond&lt;/code&gt;). For stepper motor stepping.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;unsigned long delay&lt;/code&gt; : pass the delay in millisecond&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;void enable(bool val);&lt;/code&gt;
+can work only when the enable pin is actitaved&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;bool val&lt;/code&gt; : pass &lt;code&gt;true&lt;/code&gt; or &lt;code&gt;false&lt;/code&gt; for enable or disable the motor&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;void setSpeed(long whatSpeed)&lt;/code&gt;
+set the speed of the stepper motor which is running jn the value of RPM.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;long whatSpeed&lt;/code&gt; : pass speed as parameter.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;int version(void)&lt;/code&gt;
+Return the current software version&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;void setDirection(bool direction)&lt;/code&gt;
+set the stepper direction in clock wise and anti-clockwise direction.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;bool direction&lt;/code&gt; : pass the direction as &lt;code&gt;true&lt;/code&gt; and &lt;code&gt;false&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;void step(unsigned long num_steps)&lt;/code&gt;
+take no. of steps as parameter and go in loop for that no. of steps.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;static unsigned long num_steps&lt;/code&gt;: provide the total no. steps to run.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;void setStepMode(int stepMode)&lt;/code&gt;
+Only take power of 2 as in input e.g, 1, 2, 4, 8, 16, 32, 64, 128 or 256.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;int stepMode&lt;/code&gt; : pass the microstepping value that is described above.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;testing-&#34;&gt;Testing :&lt;/h3&gt;
+&lt;p&gt;For running the library in your system please run the &lt;code&gt;example.ino&lt;/code&gt; file and have to make some adjustment in the file according to your pin connection and microstepping configuraion That is mainly the above file.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;MODE_1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;  &lt;span class=&#34;mi&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;                    &lt;span class=&#34;c1&#34;&gt;// Pin 6
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;MODE_2&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;  &lt;span class=&#34;mi&#34;&gt;7&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;                    &lt;span class=&#34;c1&#34;&gt;// Pin 7
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;MODE_3&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;  &lt;span class=&#34;mi&#34;&gt;8&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;                    &lt;span class=&#34;c1&#34;&gt;// Step Pin8
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;MODE_4&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;  &lt;span class=&#34;mi&#34;&gt;9&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;                    &lt;span class=&#34;c1&#34;&gt;// Dir Pin 9
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;microstepping&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;64&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;             &lt;span class=&#34;c1&#34;&gt;// set microstepping mode   1, 2, 4, 8, 16, 32, 64, 128 or 256.
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;unsigned&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;long&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;MOTOR_STEPS&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;200&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;    &lt;span class=&#34;c1&#34;&gt;// Total no steps per revolution for motor in full step
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;unsigned&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;long&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;MOTOR_STEPS_TOTAL&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;MOTOR_STEPS&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;long&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;microstepping&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// Total no. of motor steps
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;EN&lt;/span&gt;     &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;                    &lt;span class=&#34;c1&#34;&gt;// no pin defined
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;speed&lt;/span&gt;  &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;                    &lt;span class=&#34;c1&#34;&gt;//either set speed or give delay  
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;11&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;unsigned&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;long&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;stepdelay&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2000&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;     &lt;span class=&#34;c1&#34;&gt;// Microseconds delay  // Higher# = more rapid changes between positions, lower = softer transitions
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;12&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;help-in-improving-the-guide-&#34;&gt;&lt;strong&gt;Help in improving the guide :&lt;/strong&gt;&lt;/h4&gt;
+&lt;p&gt;Please if you find any useful improvement feel free to contact at : &lt;a href=&#34;https://twitter.com/pranav083&#34;&gt;@pranav083&lt;/a&gt; or comment below.&lt;/p&gt;
+
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>

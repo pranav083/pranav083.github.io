@@ -17,7 +17,7 @@
         
           &lt;h1 id=&#34;arduino-esp32-lvgl-lv_arduino-lv_examples-st7735s&#34;&gt;Arduino Esp32 LVGL lv_arduino lv_examples st7735s&lt;/h1&gt;
 &lt;p&gt;This setup guide is made using the following hardware and software&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Hardware Components And Supplies :-&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Hardware Components And Supplies :&lt;/strong&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;a href=&#34;https://components101.com/sites/default/files/component_pin/ESP32-Pinout.png&#34;&gt;Esp32 Dev Module&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;ST7735s 1.8&amp;quot; TFT Display 128 x 160&lt;/li&gt;
@@ -25,7 +25,7 @@
 &lt;li&gt;Jumper Cable (Male to Male)&lt;/li&gt;
 &lt;li&gt;BreadBoard&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;strong&gt;Software Used in the project&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Software Used in the project :&lt;/strong&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;a href=&#34;https://platformio.org/install/ide?install=vscode&#34;&gt;PlatformIO&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://code.visualstudio.com/download&#34;&gt;Vscode&lt;/a&gt;&lt;/li&gt;
@@ -104,10 +104,10 @@
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p align=&#34;center&#34;&gt;
-&lt;img align=&#34;center&#34; width=&#34;500&#34; height=&#34;300&#34; class=&#34;special-img-class&#34; src=&#34;https://pranav083.github.io/images/lvgl_esp32_setup/11-02-2021-13-20-32.png&#34; alt =&#34;ST7735s&#34; title =&#34;different st7735s display&#34;  &gt;  
+&lt;img align=&#34;center&#34; width=&#34;500&#34; height=&#34;300&#34; class=&#34;special-img-class&#34; src=&#34;../../static/images/lvgl_esp32_setup/11-02-2021-13-20-32.png&#34; alt =&#34;ST7735s&#34; title =&#34;different st7735s display&#34;  &gt;  
 &lt;/p&gt;
 &lt;p align=&#34;center&#34;&gt;
-&lt;img align=&#34;center&#34; width=&#34;500&#34; height=&#34;300&#34; class=&#34;special-img-class&#34; src=&#34;https://pranav083.github.io/images/lvgl_esp32_setup/11-02-2021-13-45-18.png&#34; alt =&#34;ESP32&#34; title =&#34;ESP32&#34; &gt;
+&lt;img align=&#34;center&#34; width=&#34;500&#34; height=&#34;300&#34; class=&#34;special-img-class&#34; src=&#34;../../static/images/lvgl_esp32_setup/11-02-2021-13-45-18.png&#34; alt =&#34;ESP32&#34; title =&#34;ESP32&#34; &gt;
 &lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Step 2:&lt;/strong&gt; * Now do the following setup in the downloaded library as in my case i used PlatformIO so i will go to :&lt;br&gt;
 &lt;code&gt;{your platformIO project name}/.pio/libdeps/esp32dev/TFT_eSPI/User_Setup.h&lt;/code&gt;&lt;br&gt;
@@ -241,14 +241,14 @@ and for the Arduino IDE go to &lt;code&gt;/home/{USERNAME}/Arduino/libraries/TFT
 &lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;	&lt;span class=&#34;n&#34;&gt;lvgl&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;lvgl&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;@&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;^&lt;/span&gt;&lt;span class=&#34;mf&#34;&gt;7.10.0&lt;/span&gt;
 &lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;	&lt;span class=&#34;n&#34;&gt;lvgl&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;lv_examples&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;@&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;^&lt;/span&gt;&lt;span class=&#34;mf&#34;&gt;7.10.0&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;Conclusion:&lt;/strong&gt; The whole output should look somthing like this:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://pranav083.github.io/images/lvgl_esp32_setup/11-02-2021-16-09-33.png&#34; alt=&#34;&#34; title=&#34;correct configuration&#34;&gt;
+&lt;p&gt;&lt;img src=&#34;../../static/images/lvgl_esp32_setup/11-02-2021-16-09-33.png&#34; alt=&#34;&#34; title=&#34;correct configuration&#34;&gt;
 &lt;strong&gt;Note:&lt;/strong&gt; Below is the example of wrong configuration.e.g, in the &lt;em&gt;&lt;strong&gt;step 3&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;#define LV_HOR_RES_MAX          (100) or &lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;//10      
 &lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;#define LV_VER_RES_MAX          (100) or &lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;//10  
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://pranav083.github.io/images/lvgl_esp32_setup/11-02-2021-16-13-58.png&#34; alt=&#34;&#34; title=&#34;Wrong configuration&#34;&gt;&lt;/p&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;../../static/images/lvgl_esp32_setup/11-02-2021-16-13-58.png&#34; alt=&#34;&#34; title=&#34;Wrong configuration&#34;&gt;&lt;/p&gt;
 &lt;h4 id=&#34;help-in-improving-the-guide&#34;&gt;Help in improving the guide&lt;/h4&gt;
 &lt;p&gt;Thanks for the Futuristic Labs Pvt. Ltd. for providing me the resources of the project.
-Please if you find any useful improvement feel free to contact at : @pranav083&lt;/p&gt;
+Please if you find any useful improvement feel free to contact at : &lt;a href=&#34;https://twitter.com/pranav083&#34;&gt;@pranav083&lt;/a&gt; or comment below.&lt;/p&gt;
 
         
       </description>
@@ -271,8 +271,9 @@ Please if you find any useful improvement feel free to contact at : @pranav083&l
 &lt;li&gt;USB Cable to upload the code&lt;/li&gt;
 &lt;li&gt;Jumper Cable (Male to Male)&lt;/li&gt;
 &lt;li&gt;BreadBoard&lt;/li&gt;
+&lt;li&gt;Push button or Capacitive touch button&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;strong&gt;Software Used in the project&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Software Used in the project :&lt;/strong&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;a href=&#34;https://platformio.org/install/ide?install=vscode&#34;&gt;PlatformIO&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://code.visualstudio.com/download&#34;&gt;Vscode&lt;/a&gt;&lt;/li&gt;
@@ -287,22 +288,24 @@ Please if you find any useful improvement feel free to contact at : @pranav083&l
 &lt;p&gt;&lt;strong&gt;Note:-&lt;/strong&gt; It is recommended to go with that version of the library as it is tested on the system and it is working properly. And please go through the Display SETUP guide once.&lt;/p&gt;
 &lt;!-- put the link of setup guide lvgl esp32 --&gt;
 &lt;h4 id=&#34;introduction&#34;&gt;Introduction:&lt;/h4&gt;
-&lt;p&gt;The main aim of this project is to able to run the LVGL library on the st7735s 128 x 160 TFT display with using esp32 and configure multiple button input from the different GPIO of the ESP32 and pass that data command to the screen fuctionality. I am driving my system in the landscape mode you can go with portrait mode also but you to configure the setting properly. If faces any problen on the screen setup go to the previous guide of lvgl screen setup&lt;a href=&#34;put-the-link&#34;&gt;put the link&lt;/a&gt; .
+&lt;p&gt;The main aim of this project is to able to run the LVGL library on the st7735s 128 x 160 TFT display with using esp32 and configure multiple button input from the different GPIO of the ESP32 and pass that data command to the screen fuctionality. I am driving my system in the landscape mode you can go with portrait mode also but you to configure the setting properly. If faces any problen on the screen setup go to the previous guide of lvgl screen &lt;a href=&#34;.././lvgl_esp32_setup&#34;&gt;&lt;strong&gt;Setup&lt;/strong&gt;&lt;/a&gt;.
 In this setup , I have put total of 8 button from the esp32 which are both input and touch configurable in the esp32 board&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Earlier Tested&lt;/strong&gt; : 1. Earlier i tested the blog for setting and registring the button on the lvgl, from this &lt;a href=&#34;https://blog.lvgl.io/2019-01-08/hardware-button&#34;&gt;Guide&lt;/a&gt; &lt;strong&gt;some functions depriciated&lt;/strong&gt; in the guide.
-2. But unforunately that guide have setup defined on the stm32 board and also itis for the older version of the lvgl and some of the fuction are depriciated in the newer version of the lvgl.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Earlier Tested&lt;/strong&gt; : 1. Earlier I tested the blog for setting and registring the button on the lvgl, from this &lt;a href=&#34;https://blog.lvgl.io/2019-01-08/hardware-button&#34;&gt;Guide&lt;/a&gt; &lt;strong&gt;some functions depriciated&lt;/strong&gt; in the guide.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;But unforunately that guide have setup defined on the stm32 board and also itis for the older version of the lvgl and some of the fuction are depriciated in the newer version of the lvgl.&lt;/li&gt;
+&lt;/ol&gt;
 &lt;h3 id=&#34;putting-the-setup&#34;&gt;putting the Setup&lt;/h3&gt;
 &lt;p&gt;&lt;strong&gt;Step 1&lt;/strong&gt;:Create a new project in platformIO and Do the connection of the esp32 with Capacitive touch button are as follows:&lt;/p&gt;
 &lt;p align=&#34;center&#34;&gt;
-&lt;img align=&#34;center&#34; width=&#34;500&#34; height=&#34;300&#34; class=&#34;special-img-class&#34; src=&#34;https://pranav083.github.io/images/lvgl_hardware_button_setup/16-02-2021-16-10-44.png&#34; alt =&#34;ST7735s&#34; title =&#34;Capacitive Touch sensor&#34;  &gt;  
+&lt;img align=&#34;center&#34; width=&#34;500&#34; height=&#34;300&#34; class=&#34;special-img-class&#34; src=&#34;../../static/images/lvgl_hardware_button_setup/16-02-2021-16-10-44.png&#34; alt =&#34;ST7735s&#34; title =&#34;Capacitive Touch sensor&#34;  &gt;  
 &lt;/p&gt;  
 &lt;p&gt;$$\text{Capacitive Touch sensor}$$&lt;/p&gt;
 &lt;p align=&#34;center&#34;&gt;
-&lt;img align=&#34;center&#34; width=&#34;500&#34; height=&#34;300&#34; class=&#34;special-img-class&#34; src=&#34;https://pranav083.github.io/images/lvgl_hardware_button_setup/16-02-2021-16-50-49.png&#34; alt =&#34;ST7735s&#34; title =&#34;Capacitive Touch sensor setup&#34;  &gt;  
+&lt;img align=&#34;center&#34; width=&#34;500&#34; height=&#34;300&#34; class=&#34;special-img-class&#34; src=&#34;../../static/images/lvgl_hardware_button_setup/16-02-2021-16-50-49.png&#34; alt =&#34;ST7735s&#34; title =&#34;Capacitive Touch sensor setup&#34;  &gt;  
 &lt;/p&gt;
 &lt;p&gt;$$\text{Capacitive Touch sensor setup}$$&lt;/p&gt;
 &lt;p align=&#34;center&#34;&gt;
-&lt;img align=&#34;center&#34; width=&#34;500&#34; height=&#34;300&#34; class=&#34;special-img-class&#34; src=&#34;https://pranav083.github.io/images/lvgl_esp32_setup/11-02-2021-13-45-18.png&#34; alt =&#34;ESP32&#34; title =&#34;ESP32&#34; &gt;
+&lt;img align=&#34;center&#34; width=&#34;500&#34; height=&#34;300&#34; class=&#34;special-img-class&#34; src=&#34;../../static/images/lvgl_esp32_setup/11-02-2021-13-45-18.png&#34; alt =&#34;ESP32&#34; title =&#34;ESP32&#34; &gt;
 &lt;/p&gt;
 &lt;p&gt;$$\text{ESP32 dev Board }$$&lt;/p&gt;
 &lt;h4 id=&#34;system-connections&#34;&gt;System Connections:&lt;/h4&gt;
@@ -507,11 +510,11 @@ and for the Arduino IDE go to &lt;code&gt;/home/{USERNAME}/Arduino/libraries/TFT
 &lt;span class=&#34;ln&#34;&gt;13&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;Conclusion:&lt;/strong&gt; The whole output should look somthing like this and The above code should generate this result:&lt;/p&gt;
  &lt;p align=&#34;center&#34;&gt;
-&lt;img align=&#34;center&#34; width=&#34;500&#34; height=&#34;300&#34; class=&#34;special-img-class&#34; src=&#34;https://pranav083.github.io/images/lvgl_hardware_button_setup/tested_lvgl1.gif&#34; alt =&#34;ESP32&#34; title =&#34;ESP32&#34; &gt;
+&lt;img align=&#34;center&#34; width=&#34;500&#34; height=&#34;300&#34; class=&#34;special-img-class&#34; src=&#34;../../static/images/lvgl_hardware_button_setup/tested_lvgl1.gif&#34; alt =&#34;ESP32&#34; title =&#34;ESP32&#34; &gt;
 &lt;/p&gt;
 &lt;p&gt;This is some other example running :&lt;/p&gt;
  &lt;p align=&#34;center&#34;&gt;
-&lt;img align=&#34;center&#34; width=&#34;500&#34; height=&#34;300&#34; class=&#34;special-img-class&#34; src=&#34;https://pranav083.github.io/images/lvgl_hardware_button_setup/tested_lvgl.gif&#34; alt =&#34;ESP32&#34; title =&#34;ESP32&#34; &gt;
+&lt;img align=&#34;center&#34; width=&#34;500&#34; height=&#34;300&#34; class=&#34;special-img-class&#34; src=&#34;../../static/images/lvgl_hardware_button_setup/tested_lvgl.gif&#34; alt =&#34;ESP32&#34; title =&#34;ESP32&#34; &gt;
 &lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; Below is the example of wrong configuration.e.g, in the &lt;em&gt;&lt;strong&gt;step 3&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;#define LV_HOR_RES_MAX          (100) or &lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;//10      
@@ -524,7 +527,7 @@ and for the Arduino IDE go to &lt;code&gt;/home/{USERNAME}/Arduino/libraries/TFT
 &lt;/ol&gt;
 &lt;h4 id=&#34;help-in-improving-the-guide&#34;&gt;Help in improving the guide&lt;/h4&gt;
 &lt;p&gt;Thanks for the Futuristic Labs Pvt. Ltd. for providing me the resources of the project.&lt;br&gt;
-Please if you find any useful improvement feel free to contact at : @pranav083&lt;/p&gt;
+Please if you find any useful improvement feel free to contact at : &lt;a href=&#34;https://twitter.com/pranav083&#34;&gt;@pranav083&lt;/a&gt; or comment below.&lt;/p&gt;
 
         
       </description>
