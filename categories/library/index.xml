@@ -36,8 +36,9 @@ This setup guide is made using the following hardware and software
 &lt;p&gt;This is the library which was been developed for the 1/256 steps stepper motor driver mainly with the arduino. This stepper driver is a silent stepper driver which is used mailly in the operation of low current consuming stepper motors.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Note :&lt;/strong&gt; This stepper motor should be used with high current consuming stepper motor motor such as some high grades of NEMA 17 and above.&lt;/p&gt;
 &lt;p align=&#34;center&#34;&gt;
-&lt;img align=&#34;center&#34; width=&#34;300&#34; height=&#34;300&#34; class=&#34;special-img-class&#34; src=&#34;../../static/images/Stepper_STSPIN220/2021-02-19-00-57-50.png&#34; alt =&#34;ESP32&#34; title =&#34;ESP32&#34; &gt;
+&lt;img align=&#34;center&#34; width=&#34;300&#34; height=&#34;300&#34; class=&#34;special-img-class&#34; src=&#34;https://pranav083.github.io/images/Stepper_STSPIN220/2021-02-19-00-57-50.png&#34; alt =&#34;arduino&#34; title =&#34;stepper&#34; &gt;
 &lt;/p&gt;
+/home/mighty/Documents/study/project/site/loiloi/static/images/Stepper_STSPIN220/2021-02-19-00-57-50.png
 &lt;p&gt;See the Datasheet: &lt;a href=&#34;https://www.st.com/resource/en/datasheet/stspin220.pdf&#34;&gt;https://www.st.com/resource/en/datasheet/stspin220.pdf&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;The Stepper_STSPIN220 stepper driver is for Pololu stepper driver boards
 and compatible clones. These boards use the Allegro Stepper_STSPIN220

@@ -50,15 +50,15 @@ In this setup , I have put total of 8 button from the esp32 which are both input
 &lt;h3 id=&#34;putting-the-setup&#34;&gt;putting the Setup&lt;/h3&gt;
 &lt;p&gt;&lt;strong&gt;Step 1&lt;/strong&gt;:Create a new project in platformIO and Do the connection of the esp32 with Capacitive touch button are as follows:&lt;/p&gt;
 &lt;p align=&#34;center&#34;&gt;
-&lt;img align=&#34;center&#34; width=&#34;500&#34; height=&#34;300&#34; class=&#34;special-img-class&#34; src=&#34;../../static/images/lvgl_hardware_button_setup/16-02-2021-16-10-44.png&#34; alt =&#34;ST7735s&#34; title =&#34;Capacitive Touch sensor&#34;  &gt;  
+&lt;img align=&#34;center&#34; width=&#34;500&#34; height=&#34;300&#34; class=&#34;special-img-class&#34; src=&#34;https://pranav083.github.io/images/lvgl_hardware_button_setup/16-02-2021-16-10-44.png&#34; alt =&#34;ST7735s&#34; title =&#34;Capacitive Touch sensor&#34;  &gt;  
 &lt;/p&gt;  
 &lt;p&gt;$$\text{Capacitive Touch sensor}$$&lt;/p&gt;
 &lt;p align=&#34;center&#34;&gt;
-&lt;img align=&#34;center&#34; width=&#34;500&#34; height=&#34;300&#34; class=&#34;special-img-class&#34; src=&#34;../../static/images/lvgl_hardware_button_setup/16-02-2021-16-50-49.png&#34; alt =&#34;ST7735s&#34; title =&#34;Capacitive Touch sensor setup&#34;  &gt;  
+&lt;img align=&#34;center&#34; width=&#34;500&#34; height=&#34;300&#34; class=&#34;special-img-class&#34; src=&#34;https://pranav083.github.io/images/lvgl_hardware_button_setup/16-02-2021-16-50-49.png&#34; alt =&#34;ST7735s&#34; title =&#34;Capacitive Touch sensor setup&#34;  &gt;  
 &lt;/p&gt;
 &lt;p&gt;$$\text{Capacitive Touch sensor setup}$$&lt;/p&gt;
 &lt;p align=&#34;center&#34;&gt;
-&lt;img align=&#34;center&#34; width=&#34;500&#34; height=&#34;300&#34; class=&#34;special-img-class&#34; src=&#34;../../static/images/lvgl_esp32_setup/11-02-2021-13-45-18.png&#34; alt =&#34;ESP32&#34; title =&#34;ESP32&#34; &gt;
+&lt;img align=&#34;center&#34; width=&#34;500&#34; height=&#34;300&#34; class=&#34;special-img-class&#34; src=&#34;https://pranav083.github.io/images/lvgl_esp32_setup/11-02-2021-13-45-18.png&#34; alt =&#34;ESP32&#34; title =&#34;ESP32&#34; &gt;
 &lt;/p&gt;
 &lt;p&gt;$$\text{ESP32 dev Board }$$&lt;/p&gt;
 &lt;h4 id=&#34;system-connections&#34;&gt;System Connections:&lt;/h4&gt;
@@ -263,11 +263,11 @@ and for the Arduino IDE go to &lt;code&gt;/home/{USERNAME}/Arduino/libraries/TFT
 &lt;span class=&#34;ln&#34;&gt;13&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;Conclusion:&lt;/strong&gt; The whole output should look somthing like this and The above code should generate this result:&lt;/p&gt;
  &lt;p align=&#34;center&#34;&gt;
-&lt;img align=&#34;center&#34; width=&#34;500&#34; height=&#34;300&#34; class=&#34;special-img-class&#34; src=&#34;../../static/images/lvgl_hardware_button_setup/tested_lvgl1.gif&#34; alt =&#34;ESP32&#34; title =&#34;ESP32&#34; &gt;
+&lt;img align=&#34;center&#34; width=&#34;500&#34; height=&#34;300&#34; class=&#34;special-img-class&#34; src=&#34;https://pranav083.github.io/images/lvgl_hardware_button_setup/tested_lvgl1.gif&#34; alt =&#34;ESP32&#34; title =&#34;ESP32&#34; &gt;
 &lt;/p&gt;
 &lt;p&gt;This is some other example running :&lt;/p&gt;
  &lt;p align=&#34;center&#34;&gt;
-&lt;img align=&#34;center&#34; width=&#34;500&#34; height=&#34;300&#34; class=&#34;special-img-class&#34; src=&#34;../../static/images/lvgl_hardware_button_setup/tested_lvgl.gif&#34; alt =&#34;ESP32&#34; title =&#34;ESP32&#34; &gt;
+&lt;img align=&#34;center&#34; width=&#34;500&#34; height=&#34;300&#34; class=&#34;special-img-class&#34; src=&#34;https://pranav083.github.io/images/lvgl_hardware_button_setup/tested_lvgl.gif&#34; alt =&#34;ESP32&#34; title =&#34;ESP32&#34; &gt;
 &lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; Below is the example of wrong configuration.e.g, in the &lt;em&gt;&lt;strong&gt;step 3&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;#define LV_HOR_RES_MAX          (100) or &lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;//10      

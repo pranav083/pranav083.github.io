@@ -104,10 +104,10 @@
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p align=&#34;center&#34;&gt;
-&lt;img align=&#34;center&#34; width=&#34;500&#34; height=&#34;300&#34; class=&#34;special-img-class&#34; src=&#34;../../static/images/lvgl_esp32_setup/11-02-2021-13-20-32.png&#34; alt =&#34;ST7735s&#34; title =&#34;different st7735s display&#34;  &gt;  
+&lt;img align=&#34;center&#34; width=&#34;500&#34; height=&#34;300&#34; class=&#34;special-img-class&#34; src=&#34;https://pranav083.github.io/images/lvgl_esp32_setup/11-02-2021-13-20-32.png&#34; alt =&#34;ST7735s&#34; title =&#34;different st7735s display&#34;  &gt;  
 &lt;/p&gt;
 &lt;p align=&#34;center&#34;&gt;
-&lt;img align=&#34;center&#34; width=&#34;500&#34; height=&#34;300&#34; class=&#34;special-img-class&#34; src=&#34;../../static/images/lvgl_esp32_setup/11-02-2021-13-45-18.png&#34; alt =&#34;ESP32&#34; title =&#34;ESP32&#34; &gt;
+&lt;img align=&#34;center&#34; width=&#34;500&#34; height=&#34;300&#34; class=&#34;special-img-class&#34; src=&#34;https://pranav083.github.io/images/lvgl_esp32_setup/11-02-2021-13-45-18.png&#34; alt =&#34;ESP32&#34; title =&#34;ESP32&#34; &gt;
 &lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Step 2:&lt;/strong&gt; * Now do the following setup in the downloaded library as in my case i used PlatformIO so i will go to :&lt;br&gt;
 &lt;code&gt;{your platformIO project name}/.pio/libdeps/esp32dev/TFT_eSPI/User_Setup.h&lt;/code&gt;&lt;br&gt;
@@ -241,11 +241,11 @@ and for the Arduino IDE go to &lt;code&gt;/home/{USERNAME}/Arduino/libraries/TFT
 &lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;	&lt;span class=&#34;n&#34;&gt;lvgl&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;lvgl&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;@&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;^&lt;/span&gt;&lt;span class=&#34;mf&#34;&gt;7.10.0&lt;/span&gt;
 &lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;	&lt;span class=&#34;n&#34;&gt;lvgl&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;lv_examples&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;@&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;^&lt;/span&gt;&lt;span class=&#34;mf&#34;&gt;7.10.0&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;Conclusion:&lt;/strong&gt; The whole output should look somthing like this:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../static/images/lvgl_esp32_setup/11-02-2021-16-09-33.png&#34; alt=&#34;&#34; title=&#34;correct configuration&#34;&gt;
+&lt;p&gt;&lt;img src=&#34;https://pranav083.github.io/images/lvgl_esp32_setup/11-02-2021-16-09-33.png&#34; alt=&#34;&#34; title=&#34;correct configuration&#34;&gt;
 &lt;strong&gt;Note:&lt;/strong&gt; Below is the example of wrong configuration.e.g, in the &lt;em&gt;&lt;strong&gt;step 3&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;#define LV_HOR_RES_MAX          (100) or &lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;//10      
 &lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;#define LV_VER_RES_MAX          (100) or &lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;//10  
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;../../static/images/lvgl_esp32_setup/11-02-2021-16-13-58.png&#34; alt=&#34;&#34; title=&#34;Wrong configuration&#34;&gt;&lt;/p&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://pranav083.github.io/images/lvgl_esp32_setup/11-02-2021-16-13-58.png&#34; alt=&#34;&#34; title=&#34;Wrong configuration&#34;&gt;&lt;/p&gt;
 &lt;h4 id=&#34;help-in-improving-the-guide&#34;&gt;Help in improving the guide&lt;/h4&gt;
 &lt;p&gt;Thanks for the Futuristic Labs Pvt. Ltd. for providing me the resources of the project.
 Please if you find any useful improvement feel free to contact at : &lt;a href=&#34;https://twitter.com/pranav083&#34;&gt;@pranav083&lt;/a&gt; or comment below.&lt;/p&gt;
