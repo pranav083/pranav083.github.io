@@ -247,7 +247,7 @@ and for the Arduino IDE go to &lt;code&gt;/home/{USERNAME}/Arduino/libraries/TFT
 &lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;#define LV_VER_RES_MAX          (100) or &lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;//10  
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://pranav083.github.io/images/lvgl_esp32_setup/11-02-2021-16-13-58.png&#34; alt=&#34;&#34; title=&#34;Wrong configuration&#34;&gt;&lt;/p&gt;
 &lt;h4 id=&#34;help-in-improving-the-guide&#34;&gt;Help in improving the guide&lt;/h4&gt;
-&lt;p&gt;Thanks for the Futuristic Labs Pvt. Ltd. for providing me the resources of the project.
+&lt;p&gt;Thanks Futuristic Labs Pvt. Ltd. for providing me the resources of the project.
 Please if you find any useful improvement feel free to contact at : &lt;a href=&#34;https://twitter.com/pranav083&#34;&gt;@pranav083&lt;/a&gt; or comment below.&lt;/p&gt;
 
         
@@ -526,7 +526,7 @@ and for the Arduino IDE go to &lt;code&gt;/home/{USERNAME}/Arduino/libraries/TFT
 &lt;li&gt;lvgl  event handler &lt;a href=&#34;https://docs.lvgl.io/latest/en/html/overview/event.html#send-events-manually&#34;&gt;guide&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h4 id=&#34;help-in-improving-the-guide&#34;&gt;Help in improving the guide&lt;/h4&gt;
-&lt;p&gt;Thanks for the Futuristic Labs Pvt. Ltd. for providing me the resources of the project.&lt;br&gt;
+&lt;p&gt;Thanks Futuristic Labs Pvt. Ltd. for providing me the resources of the project.&lt;br&gt;
 Please if you find any useful improvement feel free to contact at : &lt;a href=&#34;https://twitter.com/pranav083&#34;&gt;@pranav083&lt;/a&gt; or comment below.&lt;/p&gt;
 
         
