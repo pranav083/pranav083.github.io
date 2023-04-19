@@ -100,7 +100,7 @@ enforceLightMode = false
 # languageMenuName = "🌐"
 
 # Title separator, default to |.
-# titleSeparator = "|"
+titleSeparator = "|"
 
 # Enable or disable comment globally. Default to true.
 # comment = false
