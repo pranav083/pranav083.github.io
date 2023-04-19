@@ -2,12 +2,24 @@
   name = "Home"
   url = ""
   weight = -110
-
+[[main]]
+  name = "Gallery"
+  url = "2020/update"
+  weight = -108
 [[main]]
   name = "Archives"
-  url = "post/rich-content/"
+  identifier = "Archives"
   weight = -109
-
+[[main]]
+  parent = "Archives"
+  name = "2020"
+  url = "2020/markdown-syntax"
+  weight = -112 
+[[main]]
+  parent = "Archives"
+  name = "2021"
+  url = "post/lvgl_esp32_setup"
+  weight = -111  
 # Submenus are done this way: parent -> identifier
 [[main]]
   name = "Links"
@@ -16,12 +28,15 @@
 [[main]]
   parent = "Links"
   name = "LinkedIn"
-  url = "https://www.linkedin.com/"
+  url = "https://www.linkedin.com/pranav083"
 [[main]]
   parent = "Links"
   name = "Twitter"
-  url = "https://twitter.com/"
-
+  url = "https://twitter.com/pranav083"
+[[main]]
+  parent = "Links"
+  name = "Resume"
+  url = "https://drive.google.com/file/d/1Z61ZhJWqCK8pFAiZJzSlyzumnD83A6BH/view"
 [[main]]
   name = "About"
   url = "about/"
@@ -33,15 +48,15 @@
   name = "github"
   type = "social"
   weight = 1
-  url = "https://github.com/#"
+  url = "https://github.com/pranav083"
 [[social]]
   name = "twitter"
   weight = 2
-  url = "https://twitter.com/#"
+  url = "https://twitter.com/pranav083"
 [[social]]
   name = "linkedin"
   weight = 3
-  url = "https://www.linkedin.com/in/#"
+  url = "https://www.linkedin.com/in/pranav083"
 [[social]]
   name = "rss"
   weight = 4
