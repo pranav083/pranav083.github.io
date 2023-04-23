@@ -1,7 +1,6 @@
 ---
 title: "LVGL esp32 setup"
 date: 2021-02-16T14:27:35+05:30
-draft: false
 description : "Sample article showcasing basic Markdown syntax and formatting for HTML elements."
 featured : true
 tags : [
@@ -13,6 +12,7 @@ categories : [
 series : ["Setup Guide"]
 aliases : ["lvgl-arduino-esp32-setup"]
 thumbnail : "images/lvgl_esp32_setup/logo.png"
+draft: false
 ---
 
 # Arduino Esp32 LVGL lv_arduino lv_examples st7735s
