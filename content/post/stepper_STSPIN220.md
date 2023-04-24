@@ -13,6 +13,7 @@ categories : [
 series : ["Library"]
 aliases : ["arduino-stepper-library"]
 thumbnail : "images/Stepper_STSPIN220/logo.png"
+comment: true 
 ---
 
 # Stepper_STSPIN220-library Arduino

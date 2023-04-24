@@ -12,6 +12,7 @@ categories : [
 series : ["Setup Guide"]
 aliases : ["lvgl-arduino-esp32-setup"]
 thumbnail : "images/lvgl_esp32_setup/logo.png"
+comment: true 
 draft: false
 ---
 

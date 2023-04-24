@@ -11,6 +11,7 @@ categories : [
     "Project",
 ]
 series : ["Setup Guide"]
+comment: true 
 aliases : ["lvgl-arduino-esp32-setup"]
 thumbnail : "images/lvgl_hardware_button_setup/logo.png"
 ---

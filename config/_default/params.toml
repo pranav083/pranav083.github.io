@@ -4,10 +4,10 @@ enableSearch = true
 # socials
 twitter = "@pranav083"
 largeTwitterCard = true # set to true if you want to show a large twitter card image. The default is a small twitter card image
-introDescription = "Open Source Contributer, Engineer, Perpetual student, reader, continual incremental improvement."
+introDescription = "Open Source Contributer, Engineer, Perpetual student, reader, builder."
 # introURL = "about/" # set the url for the 'read more' button below the introDescription, or set to false to not show the button
-# description = "A theme based on VMware's Clarity Design System for publishing technical blogs with Hugo." # Set your site's meta tag (SEO) description here. Alternatively set this description in your home page content file e.g. content/_index.md. Whatever is set in the latter will take precedence.
-# keywords = ["design", "clarity", "hugo theme"] # Set your site's meta tag (SEO) keywords here. Alternatively set these in your home page content file e.g. content/_index.md. Whatever is set in the latter will take precedence.
+# description = "This is my personal website of Pranav kumar( @pranav083 )" # Set your site's meta tag (SEO) description here. Alternatively set this description in your home page content file e.g. content/_index.md. Whatever is set in the latter will take precedence.
+# keywords = ["embedded", "pranav083", "pranav"] # Set your site's meta tag (SEO) keywords here. Alternatively set these in your home page content file e.g. content/_index.md. Whatever is set in the latter will take precedence.
 
 # showShare = false # Uncomment to not show share buttons on each post. Also available in each post's front matter.
 
@@ -15,7 +15,7 @@ introDescription = "Open Source Contributer, Engineer, Perpetual student, reader
 ga_analytics = "G-LDLK5Z7N44"
 
 # Google tag manager
-google_tag_manager_id = "G-LDLK5Z7N44"
+google_tag_manager_id = "GTM-KBBFXN4"
 
 # Baidu analytics Id
 # baidu_analytics = "XXXXXXXX"
@@ -95,7 +95,7 @@ enforceLightMode = false
 # disclaimerText = "The opinions expressed on this site are my own personal opinions and do not represent my employer’s view in any way."
 
 # Text for the languages menu.
-languageMenuName = "🌐"
+# languageMenuName = "🌐"
 
 # Title separator, default to |.
 # titleSeparator = "|"
@@ -105,7 +105,7 @@ comments = true
 
 # Enable or disable Utterances (https://github.com/utterance/utterances) Github Issue-Based Commenting
 utterances = true  # Run the utterances script in the single.html layout to load https://utteranc.es comments
-utterancesRepo = "pranav083/loiloi" # Utterances is enabled when this param is set
+utterancesRepo = "pranav083/pranav083.github.io" # Utterances is enabled when this param is set
 utterancesLabel = "blog comments ✨💬✨" # The label needs to be manually added to your Github repository issues before configuring here
 utterancesTheme = "github-light" # Default: github-dark
 utterancesIssueTerm = "pathname" # Default: pathname
