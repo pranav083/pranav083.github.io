@@ -1,7 +1,7 @@
 ---
 title: "Control Android on Ubuntu with Internet" # Title of the blog post.
 date: 2023-04-22T23:32:51+05:30 # Date of post creation.
-description: "Article description." # Description used for search engine.
+description: "android cast with internet" # Description used for search engine.
 featured: true # Sets if post is a featured post, making appear on the home page side bar.
 draft: false # Sets whether to render this page. Draft of true will not be rendered.
 toc: false # Controls if a table of contents should be generated for first-level links automatically.
@@ -13,14 +13,16 @@ featureImageCap: 'This is the featured image.' # Caption (optional).
 thumbnail: "/images/path/thumbnail.png" # Sets thumbnail image appearing inside card on homepage.
 shareImage: "/images/path/share.png" # Designate a separate image for social media sharing.
 codeMaxLines: 10 # Override global value for how many lines within a code block before auto-collapsing.
-codeLineNumbers: false # Override global value for showing of line numbers within code block.
+codeLineNumbers: true # Override global value for showing of line numbers within code block.
 figurePositionShow: true # Override global value for showing the figure label.
 categories:
   - Technology
+  - wireless
+  - USB tethering
 tags:
-  - Tag_name1
-  - Tag_name2
-# comment: false # Disable comment if false.
+  - android
+  - ubuntu
+comment: true # Disable comment if false.
 ---
 # How to Control Your Android Device with
 
@@ -119,7 +121,6 @@ that makes this process a breeze.
        ```
    * Paste this inside the `nano` text editor and save the file by pressing `Ctrl + s` and `Ctrl + x`:
        ```console
-       
        #!/bin/bash
        sleep 2
        export XDG_RUNTIME_DIR=/run/user/$(id -u)
@@ -163,25 +164,30 @@ that makes this process a breeze.
         </details>
 
    * Make the above bash script executable by putting this command:
+
        ```console
        chmod +x auto_connect_scrcpy.sh 
        ```    
    * Put these command in the terminal : 
+
        ```console
        nano Documents/script/virtual_terminal.sh 
        ```
    * Paste this inside the `nano` text editor ans save the file by pressing `Ctrl + s` and `Ctrl + x`:
+
        ```console
        #!/bin/bash
        /bin/bash -c '/home/mighty/Documents/script/auto_connect_scrcpy.sh; exec bash'
        ```
    *  Make the above bash script executable by putting this command:
+
        ```console
        chmod +x virtual_terminal.sh 
        ```  
  
 5. Once these above step are done, Now, we have to configure the `udev rule` for the android system in the Ubuntu system. So, that whenever we connect the android device it will trigger the custom script.Follow these steps :  
  * First, find the id of your `android device`. Type `lsusb` in the terminal:
+
       ```console
       lsusb
       ```
@@ -196,6 +202,7 @@ that makes this process a breeze.
 </p> 
 
    * Now we know our device id, Make the `udev` script, Open the terminal in the Ubuntu system by pressing `Ctrl+Alt+t` and type/paste.
+
        ```console
       sudo nano /etc/udev/rules.d/71-udev-rule.rules
        ```
@@ -215,10 +222,12 @@ that makes this process a breeze.
 </p> 
 
    *  the above script will look something like this :  
+
       ```console    
-        SUBSYSTEM=="usb", ATTR{idVendor}=="22b8", RUN+="/bin/su -c '/usr/bin/Xvfb :1 -screen 0 1024x768x16 & /usr/bin/screen -dmS myscript /usr/bin/bash -c \"export DISPLAY=:1; export XAUTHORITY=/home/mighty/.Xauthority; /home/mighty/Documents/script/virtual_terminal.sh\"' mighty"
+      SUBSYSTEM=="usb", ATTR{idVendor}=="22b8", RUN+="/bin/su -c '/usr/bin/Xvfb :1 -screen 0 1024x768x16 & /usr/bin/screen -dmS myscript /usr/bin/bash -c \"export DISPLAY=:1; export XAUTHORITY=/home/mighty/.Xauthority; /home/mighty/Documents/script/virtual_terminal.sh\"' mighty"
       ```  
 6. Now once done with the above steps, type this to reload the udev rules :
+
   ```console
   sudo udevadm control --reload-rules # reload udev rules
   sudo service udev restart # restart the udev
@@ -228,7 +237,7 @@ that makes this process a breeze.
 <br>
 
 {{< youtube c55KvYbHep8 >}}
-<!-- https://youtu.be/c55KvYbHep8 -->
+
 ## Conclusion :
 
 One of the best features of scrcpy is its auto-connect functionality. This means that whenever you connect your Android device to your computer, scrcpy will automatically launch and begin displaying your device on your screen. This saves you time and hassle and makes it even more convenient to use your phone as an internet source with USB tethering turn on.
