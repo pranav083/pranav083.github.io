@@ -1,5 +1,5 @@
 ---
-title: "Control Android on Ubuntu with Internet" # Title of the blog post.
+title: "(NO ROOT!! ) Auto cast Android Device with internet in Ubuntu Using Scrcpy" # Title of the blog post.
 date: 2023-04-22T23:32:51+05:30 # Date of post creation.
 description: "android cast with internet" # Description used for search engine.
 featured: true # Sets if post is a featured post, making appear on the home page side bar.
@@ -7,10 +7,10 @@ draft: false # Sets whether to render this page. Draft of true will not be rende
 toc: false # Controls if a table of contents should be generated for first-level links automatically.
 # menu: main
 usePageBundles: false # Set to true to group assets like images in the same folder as this post.
-featureImage: "/images/path/file.jpg" # Sets featured image on blog post.
-featureImageAlt: 'Description of image' # Alternative text for featured image.
-featureImageCap: 'This is the featured image.' # Caption (optional).
-thumbnail: "/images/path/thumbnail.png" # Sets thumbnail image appearing inside card on homepage.
+featureImage: "/images/linux_android/2023-04-24-16-25-49.png" # Sets featured image on blog post.
+featureImageAlt: 'Linux system' # Alternative text for featured image.
+featureImageCap: 'Linux System connected to devices' # Caption (optional).
+thumbnail: "/images/linux_android/2023-04-24-16-25-49.png" # Sets thumbnail image appearing inside card on homepage.
 shareImage: "/images/path/share.png" # Designate a separate image for social media sharing.
 codeMaxLines: 10 # Override global value for how many lines within a code block before auto-collapsing.
 codeLineNumbers: true # Override global value for showing of line numbers within code block.
@@ -24,9 +24,7 @@ tags:
   - ubuntu
 comment: true # Disable comment if false.
 ---
-# How to Control Your Android Device with
-
-# Ubuntu Using Scrcpy
+<!-- # Auto cast Android Device with internet in Ubuntu Using Scrcpy -->
 
 Are you someone who uses their Android device to access the internet but doesn't have Wi-Fi access? Do
 you wish to control your Android device from your Ubuntu computer?  
@@ -44,11 +42,11 @@ that makes this process a breeze.
   but can work on other linux system also
 * An Android device with a USB cable for connection
 
-### Software You Need to install (explain below) :
+### Software/Packages You Need to install (explain below) :
 
-* **Scrcpy** 
-* **screen**
-* **adb**
+* **Scrcpy** : [Source Link](https://github.com/Genymobile/scrcpy)
+* **screen** : [Source Link](https://launchpad.net/ubuntu/+source/screen)
+* **adb**    : [Source Link](https://adbinstaller.com/)
 ## Basic Setup :
 
 1. Install these software from the given command :  
