@@ -1,26 +1,40 @@
 [[main]]
   name = "Home"
   url = ""
-  weight = -110
+  weight = -120
 [[main]]
   name = "Gallery"
   url = "gallery"
   weight = -108
 [[main]]
-  name = "Archives"
-  identifier = "Archives"
+  name = "Achievements"
+  identifier = "Achievements"
+  url = ""
   weight = -109
 [[main]]
-  parent = "Archives"
-  name = "2020"
-  url = "2020/markdown-syntax"
+  parent = "Achievements"
+  name = "Prize"
+  url = "prize"
   weight = -112 
 [[main]]
-  parent = "Archives"
-  name = "2021"
-  url = "post/lvgl_esp32_setup"
+  parent = "Achievements"
+  name = "In News"
+  url = "news"
   weight = -111  
+[[main]]
+  parent = "Achievements"
+  name = "Certificate"
+  url = "certificate"
+  weight = -112  
+[[main]]
+  parent = "Achievements"
+  name = "Event"
+  url = "event"
+  weight = -113  
+
+
 # Submenus are done this way: parent -> identifier
+
 [[main]]
   name = "Links"
   identifier = "Links"
@@ -58,9 +72,9 @@
   weight = 3
   url = "https://www.linkedin.com/in/pranav083"
 [[social]]
-  name = "rss"
+  name = "youtube"
   weight = 4
-  url = "index.xml"
+  url = "https://www.youtube.com/channel/UCvs9yPyIP98w-6CKLNw_eEw"
 
 # other supported social links
 # name = "youtube"
