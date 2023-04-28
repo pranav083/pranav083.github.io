@@ -1,7 +1,7 @@
 ---
 title: "(NO ROOT!! ) Auto cast Android Device with internet in Ubuntu Using Scrcpy" # Title of the blog post.
 date: 2023-04-22T23:32:51+05:30 # Date of post creation.
-description: "android cast with internet" # Description used for search engine.
+description: "If you're looking for an easy way to cast your Android device screen to Ubuntu using Scrcpy, you're in luck! With a few simple steps, you can easily mirror your device's screen onto your Ubuntu desktop. Scrcpy is a powerful tool that allows you to control your Android device from your computer, making it perfect for presentations, gaming, or even just showing off your latest app. By following this guide, you'll be able to set up Scrcpy on your Ubuntu machine and start casting your Android device in no time. With this setup, you can easily share your device's screen with others or use it as a second display for your computer. So what are you waiting for? Let's get started!" # Description used for search engine.
 featured: true # Sets if post is a featured post, making appear on the home page side bar.
 draft: false # Sets whether to render this page. Draft of true will not be rendered.
 toc: false # Controls if a table of contents should be generated for first-level links automatically.
