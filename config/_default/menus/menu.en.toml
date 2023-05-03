@@ -2,35 +2,35 @@
   name = "Home"
   url = ""
   weight = -120
-[[main]]
-  name = "Gallery"
-  url = "gallery"
-  weight = -108
+#[[main]]
+#  name = "Gallery"
+#  url = "gallery"
+#  weight = -108
 [[main]]
   name = "Achievements"
   identifier = "Achievements"
-  url = ""
+  url = "news/news/"
   weight = -109
-[[main]]
-  parent = "Achievements"
-  name = "Prize"
-  url = "prize"
-  weight = -112 
-[[main]]
-  parent = "Achievements"
-  name = "In News"
-  url = "news"
-  weight = -111  
-[[main]]
-  parent = "Achievements"
-  name = "Certificate"
-  url = "certificate"
-  weight = -112  
-[[main]]
-  parent = "Achievements"
-  name = "Event"
-  url = "event"
-  weight = -113  
+#[[main]]
+#  parent = "Achievements"
+#  name = "In News"
+#  url = "news"
+#  weight = -112  
+#[[main]]
+#  parent = "Achievements"
+#  name = "Prize And Certi."
+#  url = "prize"
+#  weight = -111 
+# [[main]]
+#   parent = "Achievements"
+#   name = "Certificate"
+#   url = "certificate"
+#   weight = -112  
+# [[main]]
+#   parent = "Achievements"
+#   name = "Event"
+#   url = "event"
+#   weight = -113  
 
 
 # Submenus are done this way: parent -> identifier

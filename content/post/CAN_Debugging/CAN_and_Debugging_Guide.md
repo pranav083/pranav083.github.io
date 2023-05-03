@@ -1,5 +1,5 @@
 ---
-title: "(Quick !!) CAN /CAN-FD Debugging Guide" # Title of the blog post.
+title: "(Quick Guide) CAN /CAN-FD Debugging" # Title of the blog post.
 date: 2022-04-28T16:28:18+05:30 # Date of post creation.
 description: "Debugging of CAN (Controller Area Network) and CAN-FD (Flexible Data-rate) in a system is a critical aspect of ensuring smooth and reliable communication between the electronic components. One common issue that can arise during debugging is signal integrity, which can cause errors in the transmission and reception of data. It is also important to check the configuration and settings of the CAN/CAN-FD controllers, such as the bitrate and sample point, to ensure they are properly set up. Additionally, analyzing the bus traffic and using debugging tools, such as oscilloscopes and logic analyzers, can help identify and isolate issues. By carefully debugging the CAN/CAN-FD system, you can ensure optimal performance and avoid potential errors or malfunctions." # Description used for search engine.
 featured: true # Sets if post is a featured post, making appear on the home page side bar.
