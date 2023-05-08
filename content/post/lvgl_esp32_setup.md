@@ -1,8 +1,8 @@
 ---
 title: "LVGL esp32 setup"
 date: 2021-02-16T14:27:35+05:30
-description : "Sample article showcasing basic Markdown syntax and formatting for HTML elements."
-featured : true
+description : "Arduino Esp32 LVGL lv_arduino lv_examples st7735s"
+featured : False
 tags : [
     "esp32","lvgl","arduino","platformIO","st7735s"
 ]
