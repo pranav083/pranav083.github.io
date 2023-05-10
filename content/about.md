@@ -19,4 +19,4 @@ In terms of related topics, it's worth mentioning that open-source embedded Linu
 
 <iframe src="https://drive.google.com/file/d/18Tj7ByYIFCFvQ7l6Dra8cMvmf4makdjy/preview" style="width:85%; height:900px;"></iframe>
 
-## Please contact me at : pranavkumar@tuta.io
+## Please contact me at : pranavkumar083@proton.me

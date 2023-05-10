@@ -36,7 +36,7 @@ tags:
 
 <iframe src="https://elinux.org/Beagleboard_gsoc_2019_bi-directional_progress#Reference_Design_For_A_GPIO-based_Parallel_Bi-Directional_Bus" style="width:100%; height:900px;"></iframe>
 
-
+<!-- https://summerofcode.withgoogle.com/projects/#4528261021827072 -->
 ### Intro video of the Project in the GSOC-2019: {{< youtube ZZDT6jNslqw >}}
 
 ### Here is the Full Youtube Playlist on the progress on the Project: [LinK](https://www.youtube.com/playlist?list=PLttoix_9Us2yHM4zNr08ynm4iwXZTgxam)
