@@ -1,0 +1,60 @@
+/* Custom dark mode colors override - GitHub Dark Theme */
+/* Force override ALL instances of the old blue color #002538 in dark mode only */
+
+/* Override CSS variables for dark mode */
+html[data-mode="dim"] {
+  --bg: #0d1117 !important;
+  --choice-bg: #0d1117 !important;
+  --footer-bg: #0d1117 !important;
+  --code-bg: #161b22 !important;
+  --table-bg: #161b22 !important;
+  --post-bg: #161b22 !important;
+  --translucent-light: rgba(255,255,255,0.05) !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not([data-mode="lit"]) {
+    --bg: #0d1117 !important;
+    --choice-bg: #0d1117 !important;
+    --footer-bg: #0d1117 !important;
+    --code-bg: #161b22 !important;
+    --table-bg: #161b22 !important;
+    --post-bg: #161b22 !important;
+    --translucent-light: rgba(255,255,255,0.05) !important;
+  }
+}
+
+/* Aggressive override - target any element with the old blue color in dark mode only */
+html[data-mode="dim"] * {
+  background-color: #0d1117 !important;
+}
+
+html[data-mode="dim"] body {
+  background: #0d1117 !important;
+  background-color: #0d1117 !important;
+}
+
+html[data-mode="dim"] .nav_header,
+html[data-mode="dim"] nav,
+html[data-mode="dim"] .nav {
+  background: #0d1117 !important;
+  background-color: #0d1117 !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not([data-mode="lit"]) * {
+    background-color: #0d1117 !important;
+  }
+  
+  html:not([data-mode="lit"]) body {
+    background: #0d1117 !important;
+    background-color: #0d1117 !important;
+  }
+  
+  html:not([data-mode="lit"]) .nav_header,
+  html:not([data-mode="lit"]) nav,
+  html:not([data-mode="lit"]) .nav {
+    background: #0d1117 !important;
+    background-color: #0d1117 !important;
+  }
+}
