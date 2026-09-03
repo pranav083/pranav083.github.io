@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Register Liveness on Pranav Kumar</title><link>https://pranav083.github.io/tags/register-liveness/</link><description>Recent content in Register Liveness on Pranav Kumar</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>Copyright © 2016–2030, Pranav Kumar</copyright><lastBuildDate>Mon, 04 May 2026 00:00:00 -0400</lastBuildDate><atom:link href="https://pranav083.github.io/tags/register-liveness/index.xml" rel="self" type="application/rss+xml"/><item><title>FUSE: Single-Pass Binary Co-Instrumentation for Accurate Vulnerability Detection</title><link>https://pranav083.github.io/post/project/fuse-thesis/</link><pubDate>Mon, 04 May 2026 00:00:00 -0400</pubDate><guid>https://pranav083.github.io/post/project/fuse-thesis/</guid><description>
+&lt;p&gt;&lt;strong&gt;MS thesis · Virginia Tech · defended May 4, 2026&lt;/strong&gt;
+Systems Software Research Group, advised by Prof. Binoy Ravindran and Prof. Freek Verbeek
+Committee: Binoy Ravindran (Chair), Freek Verbeek, Kendall Giles
+Part of the &lt;a href="https://llrm-project.org/"&gt;LLRM project&lt;/a&gt; — the Low-Level Reasoning Machine&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="research-question"&gt;Research question&lt;/h2&gt;
+&lt;p&gt;Compilers can detect memory-safety errors at build time using AddressSanitizer. Binary software shipped &lt;strong&gt;without source code&lt;/strong&gt; gets none of that protection — and commercial, legacy, and third-party binaries are exactly the code most likely to go unaudited.&lt;/p&gt;</description></item></channel></rss>
